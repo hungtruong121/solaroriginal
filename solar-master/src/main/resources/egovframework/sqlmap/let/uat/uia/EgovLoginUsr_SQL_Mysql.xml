@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="LoginUsr">
+
+	<typeAlias  alias="egovMap" type="egovframework.rte.psl.dataaccess.util.EgovMap"/>
+	<typeAlias  alias="loginVO" type="egovframework.com.cmm.LoginVO"/>
+	<typeAlias  alias="citizenVO" type="egovframework.let.citizen.service.CitizenVO"/>
+
+	<!-- 로그인 처리를 위한 resultMap -->
+	<resultMap id="login" class="egovframework.com.cmm.LoginVO">
+		<result property="id" column="id" columnIndex="1"/>
+		<result property="uid" column="uid" columnIndex="2"/>
+		<result property="name" column="name" columnIndex="3"/>
+		<result property="password" column="password" columnIndex="4"/>
+	</resultMap>
+
+    <resultMap id="citizen" class="egovframework.let.citizen.service.CitizenVO">
+        <result property="id" column="id" columnIndex="1"/>
+        <result property="uid" column="uid" columnIndex="2"/>
+        <result property="name" column="name" columnIndex="3"/>
+        <result property="password" column="password" columnIndex="4"/>
+        <result property="email" column="email" columnIndex="5"/>
+        <result property="birth" column="birth" columnIndex="6"/>
+        <result property="phone" column="phone" columnIndex="7"/>
+        <result property="createdAt" column="createdAt" columnIndex="8"/>
+        <result property="updatedAt" column="updatedAt" columnIndex="9"/>
+        <result property="deletedAt" column="deletedAt" columnIndex="10"/>
+    </resultMap>
+    
+    <resultMap id="citizenUser" class="egovframework.let.citizen.service.CitizenVO">
+        <result property="id" column="id" columnIndex="1"/>
+        <result property="uid" column="uid" columnIndex="2"/>
+        <result property="name" column="name" columnIndex="3"/>
+        <result property="password" column="password" columnIndex="4"/>
+        <result property="createdAt" column="createdAt" columnIndex="5"/>
+        <result property="updatedAt" column="updatedAt" columnIndex="6"/>
+        <result property="deletedAt" column="deletedAt" columnIndex="7"/>
+    </resultMap>
+
+    <insert id="loginDAO.insert" parameterClass="citizenVO">
+        INSERT INTO citizen_user
+        (user_id, name, password, created_at, updated_at, deleted_at)
+        values
+        (#uid#, #name#, #password#, NOW(), NOW(), null)
+        <selectKey resultClass="int" keyProperty="id" >
+            SELECT @@IDENTITY AS id
+        </selectKey>
+    </insert>
+
+    <delete id="loginDAO.delete" parameterClass="citizenVO" >
+			DELETE FROM citizen_user
+			WHERE
+				 user_id = #uid#
+    </delete>
+
+    <select id="loginDAO.actionLogin" resultMap="login">
+		SELECT cu.id AS id,
+            cu.name as name,
+            cu.user_id as uid,
+            cu.password as password
+		  FROM citizen_user as cu
+		 WHERE cu.user_id = #uid#
+		   AND cu.password = #password#
+		   AND cu.deleted_at IS NULL
+           LIMIT 1;
+    </select>
+
+    <select id="loginDAO.connectRepository" resultMap="login">
+        SELECT cu.id AS id,
+        cu.name as name,
+        cu.user_id as uid,
+        "" as password
+        FROM citizen_user as cu
+        WHERE cu.user_id = #uid#
+        AND cu.deleted_at IS NULL
+        LIMIT 1;
+    </select>
+
+    <!-- 아이디 찾기 -->
+	<select id="loginDAO.searchId" resultMap="citizen">
+        SELECT id AS id
+            , user_id AS uid
+            , name AS name
+            , password AS password
+            , email AS email
+            , birth AS birth
+            , phone AS phone
+            , created_at AS createdAt
+            , updated_at AS updatedAt
+            , deleted_at AS deletedAt
+        FROM citizen_user
+        WHERE name = #name#
+        AND deleted_at IS NULL
+	</select>
+
+    <!-- 아이디 찾기 -->
+    <select id="loginDAO.valid" resultClass="int" parameterClass="java.lang.String">
+        SELECT EXISTS (SELECT 1 FROM citizen_user cu WHERE  REPLACE(cu.user_id, '-', '') = REPLACE(#uid#, '-', '')  LIMIT 1)
+    </select>
+
+    <select id="loginDAO.searchPasswordByPhone" resultMap="citizenUser">
+        SELECT id AS id
+        , user_id AS uid
+        , name AS name
+        , password AS password
+        , created_at AS createdAt
+        , updated_at AS updatedAt
+        , deleted_at AS deletedAt
+        FROM citizen_user
+        WHERE name = #namePhone#
+        AND user_id = #uIdPhone#
+        AND deleted_at IS NULL
+    </select>
+    <select id="loginDAO.searchPasswordByEmail" resultMap="citizenUser">
+        SELECT id AS id
+        , user_id AS uid
+        , name AS name
+        , password AS password
+        , created_at AS createdAt
+        , updated_at AS updatedAt
+        , deleted_at AS deletedAt
+        FROM citizen_user
+        WHERE name = #nameEmail#
+        AND user_id = #uIdEmail#
+        AND deleted_at IS NULL
+    </select>
+    
+    <select id="loginDAO.verityVO" resultMap="login">
+		<![CDATA[
+		SELECT id AS id
+			 , user_id AS uid
+			 , name AS name
+			 , password AS password
+			 , email AS email
+			 , birth AS birth
+			 , phone AS phone
+			 , created_at AS createdAt
+			 , updated_at AS updatedAt
+			 , deleted_at AS deletedAt
+		  FROM citizen_user
+		 WHERE name = #name#
+		   AND email = #email#
+		   AND deleted_at IS NULL
+		]]>
+	</select>
+	<select id="loginDAO.searchUserID" resultMap="citizenUser">
+        SELECT id AS id
+        , user_id AS uid
+        , name AS name
+        , password AS password
+        , created_at AS createdAt
+        , updated_at AS updatedAt
+        , deleted_at AS deletedAt
+        FROM citizen_user
+        WHERE user_id = #uid#
+        AND deleted_at IS NULL
+    </select>
+    <!-- 변경된 비밀번호를 저장 -->
+	<update id="loginDAO.updatePassword" parameterClass="loginVO">
+		UPDATE citizen_user
+		   SET password = #password#
+		   		,updated_at = NOW()		   
+		 WHERE user_id = #uid#
+	</update>
+</sqlMap>

@@ -1,0 +1,46 @@
+.pager.number-bar ul {
+  margin-top: 68px;
+  margin-bottom: 116px;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.pager.number-bar ul:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.pager.number-bar ul li {
+  margin-right: 11px;
+  float: left;
+}
+
+.pager.number-bar ul li a {
+  text-align: center;
+  line-height: 33px;
+  width: 33px;
+  height: 33px;
+  display: block;
+  color: #333;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.pager.number-bar ul li a.on {
+  background: #366df2;
+  border-radius: 33px;
+  color: #fff;
+  font-weight: 700;
+}
+
+.pager.number-bar ul li:last-child {
+  margin-right: 0;
+}

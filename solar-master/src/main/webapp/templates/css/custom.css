@@ -1,0 +1,162 @@
+label.error, span.error {
+	color: red !important;
+	width: 575px;
+	word-break: break-word !important;
+	display: block !important;
+	font-size: 16px !important;
+}
+.tel-error {
+	color: red !important;
+	width: 575px;
+	word-break: break-word !important;
+	display: none;
+	font-size: 16px !important;
+}
+.section.install-content-wrap .section-content .apply-wrap .bottom-form select.error{
+	color: #999  !important;
+    font-weight: 500 !important;
+}
+.section.install-content-wrap .section-content .apply-wrap .mid-form select.error{
+	color: #999  !important;
+    font-weight: 500 !important;
+}
+.section.install-content-wrap .section-content .apply-wrap .bottom-form label#i-name-error{
+	margin-top: -27px;
+    margin-bottom: 20px;
+}
+.section.install-content-wrap .section-content .apply-wrap .bottom-form label#installDate-error{
+	margin-top: -27px;
+    margin-bottom: 45px;
+}
+.section.install-content-wrap .section-content .apply-wrap .mid-form label#address-error{
+	margin-top: -27px;
+    margin-bottom: 20px;
+}
+.section.install-content-wrap .section-content .apply-wrap .mid-form label#aptType-error{
+    margin-bottom: 20px;
+}
+.section.install-content-wrap .section-content .apply-wrap .mid-form label#addr5-error{
+	margin-top: -27px;
+    margin-bottom: 20px;
+}
+.section.install-content-wrap .section-content .apply-wrap .mid-form input#addr4 {
+    margin-bottom: 0px;
+}
+/* as */
+
+.section.as-content-wrap .section-content form select{
+    color: #999  !important;
+    font-weight: 300 !important;
+}
+.section.as-content-wrap .section-content form label#i-name-error {
+    margin-bottom: 20px;
+} 
+.section.as-content-wrap .section-content form label#etc-error {
+    margin-bottom: 20px;
+} 
+/* custom calenda */
+
+body .form-datetime-as{
+position: relative;
+}
+body .form-datetime-as .calendar{
+	position: absolute;
+	right: 20px;
+	top: 20px !important;
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+}
+.form-datetime-as input{
+
+    width: 1200px;
+    height: 64px;
+    padding-left: 19px;
+    padding-right: 19px;
+    border: 1px solid #999;
+}
+/* mtm */
+.section.mtm-content-wrap .section-content .tabs-wrap .panels .panel.mtm-item-wrap .mtm-item-content .mid-item label#title-error{
+	margin-top: -27px;
+    margin-bottom: 20px;
+}
+.section.mtm-content-wrap .section-content .tabs-wrap .panels .panel.mtm-item-wrap .mtm-item-content .mid-item label#titile-content-error{
+	margin-top: -27px;
+}
+.section.mtm-content-wrap .section-content .tabs-wrap .panels .panel.mtm-item-wrap form  input:focus{
+color: black;
+}
+
+
+.message-popup {
+  z-index: 9999;
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.message-popup .popup-content {
+  position: relative;
+  width: 560px;
+  min-height: 370px;
+  height: fit-content;
+  background: #fff;
+  margin: 260px auto 0;
+  text-align: center;
+}
+
+.message-popup .popup-content .content-header {
+  width: 100%;
+  border-bottom: 1px solid #999;
+  height: 80px;
+  line-height: 80px;
+}
+
+.message-popup .popup-content .content-body {
+  padding-top: 60px;
+  color: #1c1d20;
+  line-height: 40px;
+  font-size: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.message-popup .popup-content .content-footer {
+  bottom: 23px;
+  right: 22.5px;
+  margin-top: 60px;
+}
+
+.message-popup .popup-content .content-footer input {
+  cursor: pointer;
+  width: 250px;
+  background: #366df2;
+  height: 60px;
+  border: 0;
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 30px;
+}
+
+.message-popup .popup-content .content-footer input:first-child {
+  color: #fff;
+}
+  form[name=buildOrderVO] input#searchAddress {
+   margin-top: 45px;
+    margin-bottom: 28px;
+    width: 575px;
+    height: 64px;
+    cursor: pointer;
+    background: #485574;
+    color: #fff;
+    font-size: 21px;
+    font-weight: 500;
+} 
+.section.product-content-wrap .section-content .product-table table tr th{
+	padding: 0 7px;
+}
+

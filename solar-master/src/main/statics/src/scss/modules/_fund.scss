@@ -1,0 +1,151 @@
+.section {
+    &.fund-content-wrap {
+        .section-content {
+            .top-table-wrap {
+                @include margin ($mb:100px);
+                .radius-box {
+                    margin: 0 auto 50px;
+                    width: 288px; height: 60px; background: $radiusBox; border-radius: 30px;
+                    p {
+                        text-align: center;
+                        line-height: 60px;
+                        color: $whiteColor;
+                        font: {
+                            size: 24px;
+                            weight: 400;
+                        }
+                    }
+                    &.deep-color {
+                        background: #485574;
+                    }
+                }
+                >p {
+                    color: $mainTextColor2;
+                    font: {
+                        size: 18px;
+                    }
+                    strong {
+                        color: $bgTextColor;
+                        font: {
+                            size: 20px;
+                        }
+                    }
+                }
+                table {
+                    @include margin ($mt:25px,$mb:40px);
+                    border-collapse: collapse;
+                    width: $width100;
+                    caption {
+                        @include padding ($pb:10px);
+                        text-align: left;
+                        color: $bgTextColor;
+                        font: {
+                            size: 20px;
+                            weight: 700;
+                        }
+                    }
+                    tr {
+                        height: 44px;
+                        th {
+                            width: 33.333%;
+                            background: #d4d4d4;
+                            color: $bgTextColor;
+                            border: 1px solid $whiteColor;
+                            font: {
+                                size: 20px;
+                            }
+                        }
+                        td {
+                            text-align: center;
+                            background: #f4f4f4;
+                            color: $mainTextColor;
+                            border: 1px solid $whiteColor;
+                            font: {
+                                size: 15px;
+                            }
+                        }
+                    }
+                }
+                ul {
+                    li {
+                        @include padding ($pb:10px);
+                        color: #6d6e71;
+                        font: {
+                            size: 18px;
+                        }
+                    }
+                }
+            }
+            .bottom-table-wrap {
+                @include margin ($mb:80px);
+                .radius-box {
+                    margin: 0 auto 39px;
+                    width: 382px; height: 60px; background: $radiusBox; border-radius: 30px;
+                    p {
+                        text-align: center;
+                        line-height: 60px;
+                        color: $whiteColor;
+                        font: {
+                            size: 24px;
+                            weight: 400;
+                        }
+                    }
+                    &.deep-color {
+                        background: #485574;
+                    }
+                }
+                table {
+                    border-collapse: collapse;
+                    width: $width100;
+                    @include margin ($mb:40px);
+                    caption {
+                        text-align: right;
+                        padding-bottom: 10px;
+                        color: #888;
+                        font: {
+                            size: 14px;
+                        } /* 2019-06-05 */
+                    }
+                    tr {
+                        height: 44px;
+                        th {
+                            background: #d4d4d4;
+                            color: $bgTextColor;
+                            border: 1px solid $whiteColor;
+                            font: {
+                                size: 16px;
+                            }
+                        }
+                        td {
+                            text-align: center;
+                            background: #f4f4f4;
+                            color: $mainTextColor;
+                            border: 1px solid $whiteColor;
+                            font: {
+                                size: 14px;
+                            }
+                        }
+                        &.height80 {
+                            height: 80px;
+                        }
+                        &:last-of-type {
+                            td {
+                                background: #485574;
+                                color: $whiteColor;
+                            }
+                        }
+                    }
+                }
+                ul {
+                    li {
+                        @include padding ($pb:5px);
+                        color: #6d6e71;
+                        font: {
+                            size: 18px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,287 @@
+.section {
+    &.plan-content-wrap{
+        .section-content {
+            .caption-wrap {
+                width:100%;
+                text-align: right;
+                h3 {
+                    color: #a9a9a9;
+                    font-size: 15px;
+                    font-weight:200;
+                }
+            }
+            .box-inner {
+                width: $width100; height: 370px;
+                @include border-bottom;
+                .box-inner-item {
+                    @include margin ($mr:50px);
+                    float: left;
+                    width: calc(33.333% - 34px);
+                    height: 307px;
+                    background-size:cover;
+                    &.box-inner-item1 {
+                        background: url('../img/background_box1.png') center center no-repeat;
+                    }
+                    &.box-inner-item2 {
+                        background: url('../img/background_box2.png') center center no-repeat;
+                    }
+                    &.box-inner-item3 {
+                        background: url('../img/background_box3.png') center center no-repeat;
+                    }
+                    &:last-child {
+                        @include margin ($mr:0);
+                    }
+                }
+                &:after {
+                    content:'';
+                    display: block;
+                    clear: both;
+                }
+            }
+        }
+    }
+    &.energy-content-wrap{
+        .section-content {
+            @include padding ($pb:93px);
+            @include border-bottom;
+                table {
+                @include position(relative);
+                border-collapse: collapse;
+                width: $width100;
+                background: #f4f4f4;
+                color: $mainTextColor;
+                font: {
+                    size: 18px;
+                    weight: lighter;
+                }
+                caption {
+                    text-align: right;
+                    color: #a9a9a9;
+                    font: {
+                        size: 15px;
+                    }
+                }
+                th {
+                    border: 1px solid $whiteColor; width: 194px; height: 134px;
+                }
+                td {
+                    text-align: center;
+                    border: 1px solid $whiteColor; width: 252px;
+                }
+                tr {
+                    p {
+                        color: $bgTextColor;
+                        font: {
+                            size: 20px;
+                            weight: 500;
+                        }
+                    }
+                    &:nth-of-type(1) {
+                        th {
+                            @include position(relative);
+                            &:nth-of-type(2) {
+                                background: url('../img/germany.png') no-repeat; background-position: center 33px;
+                                p {
+                                    @include position(absolute, $l:0, $r:0, $b:23px);
+                                    margin: auto;
+                                }
+                            }
+                            &:nth-of-type(3) {
+                                background: url('../img/france.png') no-repeat; background-position: center 33px;
+                                p {
+                                    @include position(absolute, $l:0, $r:0, $b:23px);
+                                    margin: auto;
+                                }
+                            }
+                            &:nth-of-type(4) {
+                                background: url('../img/denmark.png') no-repeat; background-position: center 33px;
+                                p {
+                                    @include position(absolute, $l:0, $r:0, $b:23px);
+                                    margin: auto;
+                                }
+                            }
+                            &:nth-of-type(5) {
+                                background: url('../img/china.png') no-repeat; background-position: center 33px;
+                                p {
+                                    @include position(absolute, $l:0, $r:0, $b:23px);
+                                    margin: auto;
+                                }
+                            }
+                        }
+                    }
+                    &:nth-of-type(2) {
+                        th {
+                            @include position(relative);
+                            background: url('../img/background_logo1.png') no-repeat;
+                            background-position: center 31px;
+                            p {
+                                @include position(absolute, $l:0, $r:0, $b:29px);
+                                margin: auto;
+                            }
+                        }
+                    }
+                    &:nth-of-type(3) {
+                        th {
+                            @include position(relative);
+                            background: url('../img/background_logo2.png') no-repeat;
+                            background-position: center 35px;
+                            p {
+                                @include position(absolute, $l:0, $r:0, $b:29px);
+                                margin: auto;
+                            }
+                        }
+                    }
+                    &:nth-of-type(4) {
+                        th {
+                            @include position(relative);
+                            background: url('../img/background_logo3.png') no-repeat;
+                            background-position: center 26px;
+                            p {
+                                @include position(absolute, $l:0, $r:0, $b:29px);
+                                margin: auto;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.icon-content-wrap{
+        .section-content {
+            @include border-bottom;
+            height: 500px;
+            .icon-box {
+                    ul {
+                    text-align: center;
+                    li {
+                        display: inline-block;
+                        @include margin ($mr:140px);
+                        img {
+                            @include margin($mb:10px);
+                        }
+                        p {
+                            color: $mainTextColor;
+                            font: {
+                                size: 22px;
+                            }
+                        }
+                        strong {
+                            color: $bgTextColor;
+                            font: {
+                                size: 27px;
+                            }
+                        }
+                        &:nth-child(2) {
+                            @include margin ($mr:200px);
+                        }
+                        &:last-child {
+                            @include margin ($mr:10px);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.goal-content-wrap{
+        .section-content {
+            .radius-wrap {
+                .radius-box {
+                    @include box-shadow;
+                    margin: 0 auto 40px;
+                    width: 400px; height: 60px; border-radius: 30px;
+                    background: $radiusBox;
+                    p {
+                        text-align: center;
+                        line-height: 60px;
+                        color: $whiteColor;
+                        font: {
+                            size: 24px;
+                        }
+                    }
+                }
+                .radius-content {
+                    div {
+                        display: inline-block;
+                        @include box-shadow;
+                        @include position(relative);
+                        @include margin($mb:183px);
+                        width: 387px; height: 190px; border-radius: 20px; border: 1px solid #cfcfcf;
+                        &:nth-child(1) {
+                            background: url('../img/radius-box1.png') left bottom no-repeat;
+                            @include margin ($mr:15px);
+                        }
+                        &:nth-child(2) {
+                            background: url('../img/radius-box3.png') left bottom no-repeat; /* 2019-06-05 */
+                            @include margin ($mr:15px);
+                        }
+                        &:nth-child(3) {
+                            background: url('../img/radius-box2.png') left top no-repeat; /* 2019-06-05 */
+                            @include margin ($mr:0px);
+                        }
+                        p {
+                            @include position(absolute,$t:62px,$r:35px);
+                            text-align: center;
+                            color: #6d6e71;
+                            font: {
+                                size: 23px;
+                            }
+                        }
+                        strong {
+                            color: $mainTextColor2;
+                            font: {
+                                size: 32px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.chart-content-wrap{
+        .section-content {
+            .radius-wrap {
+                .radius-box {
+                    @include box-shadow;
+                    margin: 0 auto 40px;
+                    width: 400px; height: 60px; border-radius: 30px;
+                    background: $radiusBox;
+                    p {
+                        text-align: center;
+                        line-height: 60px;
+                        color: $whiteColor;
+                        font: {
+                            size: 24px;
+                        }
+                    }
+                }
+                .radius-content {
+                    ul {
+                        width:100%;
+                        &:after {
+                            content:'';
+                            display: block;
+                            clear: both;
+                        }
+                        li{
+                            width: calc( 33.333% - 20px );
+                            float: left;
+                            text-align: center;
+                            &:nth-child(even) {
+                                @include margin ($mr:30px,$ml:30px);
+                            }
+                            img {
+                                width:100%;
+                                margin-top:30px;
+                            }
+                        }
+                    }
+                    .chart-general {
+                        width:100%;
+                        @include margin ($mt:30px);
+                        text-align: right;
+                    }
+                }
+            }
+        }
+    }
+}

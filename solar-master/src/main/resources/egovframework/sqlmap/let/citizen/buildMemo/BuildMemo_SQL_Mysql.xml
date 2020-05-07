@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="buildOrder">
+
+    <typeAlias  alias="egovMap" type="egovframework.rte.psl.dataaccess.util.EgovMap"/>
+    <typeAlias  alias="buildMemoVO" type = "egovframework.let.citizen.service.BuildMemoVO"/>
+    
+	<insert id="buildMemoDAO.insert" parameterClass="buildMemoVO">
+        <![CDATA[
+            INSERT INTO build_memo
+                	(parent_id,
+                    parent_type,
+                    users_id,
+                    content,
+                    created_at, 
+                    updated_at
+            )
+            VALUES (
+                    #parentId#,
+                    #parentType#,
+                    #userId#,
+                    #content#,
+                   	NOW(), 
+                   	NOW()
+           )
+        ]]>
+        <selectKey resultClass="int" keyProperty="id">
+          	SELECT @@IDENTITY AS id
+      	</selectKey>
+    </insert>
+
+</sqlMap>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMapConfig PUBLIC "-//iBATIS.com//DTD SQL Map Config 2.0//EN"
+    "http://www.ibatis.com/dtd/sql-map-config-2.dtd">
+
+<sqlMapConfig>
+	<sqlMap resource="egovframework/sqlmap/let/uat/uia/EgovLoginUsr_SQL_Mysql.xml"/>
+	<sqlMap resource="egovframework/sqlmap/let/uat/token/CitizenToken_SQL_Mysql.xml"/>
+	<sqlMap resource="egovframework/sqlmap/let/uat/company/CitizenCompany_SQL_Mysql.xml"/>
+	<sqlMap resource="egovframework/sqlmap/let/uat/notice/CitizenNotice_SQL_Mysql.xml"/>
+	<sqlMap resource="egovframework/sqlmap/let/uat/product/CitizenProduct_SQL_Mysql.xml"/>
+	<sqlMap resource="egovframework/sqlmap/let/citizen/userQna/UserQna_SQL_Mysql.xml"/>
+</sqlMapConfig>

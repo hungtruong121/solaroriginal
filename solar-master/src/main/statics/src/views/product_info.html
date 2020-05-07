@@ -1,0 +1,85 @@
+@@include('modules/sub_header.html', {"title": "Home", "class": ""})
+
+<div class="content-body">
+    <div class="sub-content-head-wrap sub-content3">
+        @@include('modules/sub_content_head.html')
+        <div class="sub-navigation-wrap">
+            <div class="sub-navigation">
+                <div class="dropdown">
+                    <button class="dropdown-button">
+                        <span>설치안내</span>
+                        <img src="./img/ico_small_next.png" alt="small_next">
+                    </button>
+                    <div class="dropdown-menu">
+                        <ul>
+                           <li><a href="about_us.html">태양광 지원 센터</a></li>
+                            <li><a href="mini_power_plant.html">태양광 미니 발전소</a></li>
+                            <li><a href="service.html">설치 안내</a></li>
+                            <li class="alert-pop"><a href="install_apply.html">온라인 신청</a></li>
+                            <li><a href="notice.html">게시판</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="dropdown-button">
+                        <span>상품정보</span>
+                        <img src="./img/ico_small_next.png" alt="small_next">
+                    </button>
+                    <div class="dropdown-menu">
+                        <ul>
+                            <li><a href="check_list.html">사전 확인 사항</a></li>
+                            <li><a href="company_info.html">보급업체정보</a></li>
+                            <li><a href="product_info.html">상품정보</a></li>
+                            <li><a href="fund.html">보조금 정보</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section product-content-wrap">
+        <div class="section-content product-content">
+          <button class="top-button">up</button>
+          <div class="product-title">
+              <input type="search" placeholder="찾고계신 용량 혹은 보급회사명을 입력해주세요.">
+              <button class="search-button">search</button>
+              <div class="title-button">
+                  <button class="price-button"><img src="img/mini-icon1.png" alt="price">낮은 가격순</button>
+                  <button class="efficien-button"><img src="img/mini-icon2.png" alt="efficien">높은 효율순</button>
+                  <button class="weight-button"><img src="img/mini-icon3.png" alt="weight">낮은 중량순</button>
+              </div>
+          </div>
+          <div class="product-table">
+                <table border="1" sumary="info" frame="void">
+                    <caption>상품정보</caption>
+                    <tr>
+                        <th>보급업체</th>
+                        <th>종류</th>
+                        <th>상품명</th>
+                        <th>설비용량</th>
+                        <th>제품규격</th>
+                        <th>제품가격</th>
+                        <th>자부담금</th>
+                        <th>효율</th>
+                        <th>중량</th>
+                        <th>보급기간</th>
+                    </tr>
+                    <tr>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+@@include('modules/footer.html')

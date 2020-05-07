@@ -1,0 +1,286 @@
+.section {
+    &.mtm-content-wrap {
+        .section-content {
+            .tabs-wrap {
+                .tabs {
+                    &:after {
+                        @include clearBoth();
+                    }
+                    @include margin ($mb:68px);
+                    li {
+
+                        float: left;
+                        background: #f1f1f1;
+                        color: $mainTextColor5;
+                        width: 50%;
+                        text-align: center;
+                        a {
+                            height: 80px;
+                            line-height: 80px;
+                            font: {
+                                size: 28px;
+                            }
+                            display: block;
+                            &.on {
+                                background: #485574;
+                                color: $whiteColor;
+                                font: {
+                                    weight: 600;
+                                }
+                                border: none;
+                            }
+                        }
+                    }
+                }
+                .panels {
+                    .panel {
+                        &:nth-child(2) {
+                            .tables {
+                                .table {
+                                    width: $width100;
+                                    border: 1px solid $boderGray2;
+                                    border-collapse: collapse;
+                                    tr {
+                                        text-align: left;
+                                        height: 64px;
+                                        &:first-child {
+                                            background: #6c6b88;
+                                            color: $whiteColor;
+                                            th {
+                                                border: none;
+                                                &:first-child {
+                                                    @include padding ($pl:33px);
+                                                }
+                                            }
+                                        }
+                                        th {
+                                            font: {
+                                                size: 20px;
+                                                weight: 400;
+                                            }
+                                            &:first-child {
+                                                @include padding ($pl:43px);
+                                                width: 120px;
+                                            }
+                                            &:nth-child(2) {
+                                                width: 125px;
+                                            }
+                                            &:nth-child(4) {
+                                                width: 155px;
+                                            }
+                                            &:nth-child(5) {
+                                                width: 155px;
+                                            }
+                                        }
+                                        td {
+                                            border-top: 1px solid $boderGray2;
+                                            color: #777;
+                                            border-left: none; border-right: none;
+                                            &:first-child {
+                                                @include padding ($pl:43px);
+                                                width: 120px;
+                                            }
+                                            &:nth-child(2) {
+                                                width: 125px;
+                                            }
+                                            &:nth-child(4) {
+                                                width: 155px;
+                                            }
+                                            &:nth-child(5) {
+                                                width: 155px;
+                                            }
+                                            a {
+                                                display: block;
+                                                height: 64px; line-height: 64px;
+                                            }
+                                        }
+                                        .red-text {
+                                            color: red;
+                                            border-top: 1px solid $boderGray2;
+                                            border-bottom: 1px solid $boderGray2;
+                                        }
+                                    }
+                                    caption {
+                                        display: none;
+                                    }
+                                }
+                            }
+                            .num {
+                                @include margin ($mt:68px,$mb:116px);
+                                @include flex (flex,center);
+                                justify-content: center;
+                                &:after {
+                                    @include clearBoth();
+                                }
+                                li {
+                                    @include margin ($mr:11px);
+                                    float: left;
+                                    a {
+                                        text-align: center;
+                                        line-height: 33px;
+                                        width: 33px; height: 33px;
+                                        display: block;
+                                        color: $mainTextColor;
+                                        font: {
+                                            size: 18px;
+                                            weight: 400;
+                                        }
+                                        &.on {
+                                            background: $mainButtonColor; border-radius: 33px;
+                                            color: $whiteColor;
+                                            font: {
+                                                weight: 700;
+                                            }
+                                        }
+                                    }
+                                    &:last-child {
+                                        @include margin ($mr:0);
+                                    }
+                                }
+                            }
+                        }
+                        &.mtm-item-wrap {
+                            ::placeholder {
+                                color: $boderGray2;
+                                font: {
+                                    size: 20px;
+                                    weight: 300;
+                                }
+                            }
+                            .mtm-item-content {
+                                color: $mainTextColor;
+                                font: {
+                                    size: 21px;
+                                    weight: 400;
+                                }
+                                span {
+                                    color: #ff671f;
+                                }
+                                .top-item {
+                                    @include border-bottom;
+                                    @include padding ($pb:80px);
+                                    &:after {
+                                        @include clearBoth();
+                                    }
+                                    h3 {
+                                        @include margin ($mb:30px);
+                                        color: $mainTextColor3;
+                                        font: {
+                                            size: 28px;
+                                        }
+                                    }
+                                    input {
+                                        border: 1px solid $boderGray2;
+                                        @include padding ($pl:19px,$pr:19px);
+                                        @include margin ($mt:14px);
+                                        width: 575px; height: 64px;
+                                        color: $mainTextColor4;
+                                        font: {
+                                            size: 20px;
+                                            weight: 400;
+                                        }
+                                    }
+                                    div {
+                                        @include margin ($mt:28px);
+                                        float: left;
+                                        &:nth-child(even) {
+                                            input {
+                                                @include margin ($mr:50px);
+                                            }
+                                        }
+                                        &:nth-child(2),&:nth-child(3) {
+                                            @include margin ($mt:0);
+                                        }
+                                    }
+                                }
+                                .mid-item {
+                                    @include padding ($pt:80px);
+                                    select,input {
+                                        border: 1px solid $boderGray2;
+                                        @include padding ($pl:19px,$pr:19px);
+                                        @include margin ($mt:14px,$mb:28px);
+                                        width: $width100; height: 64px;
+                                    }
+                                    select {
+                                        border: 1px solid $boderGray2;
+                                        &::-ms-expand {
+                                            display: none;
+                                        }
+                                        -webkit-appearance: none;
+                                        background: url(../img/arrow.png) 1170px 28px no-repeat;
+                                        color: $boderGray2;
+                                        font: {
+                                            size: 20px;
+                                            weight: 300;
+                                        }
+                                    }
+                                    input,textarea {
+                                        font: {
+                                            size: 21px;
+                                            weight: 400;
+                                        }
+                                    }
+                                    textarea {
+                                        border: 1px solid $boderGray2;
+                                        @include padding ($pl:19px,$pr:19px,$pt:22px);
+                                        @include margin ($mt:14px,$mb:28px);
+                                        width: $width100;
+                                    }
+                                    .fileBox {
+                                        input[type="file"] {
+                                            position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip:rect(0,0,0,0); border: 0;
+                                        }
+                                        label {
+                                            display: inline-block;
+                                            text-align: center;
+                                            background-color: #485574; color: $whiteColor;
+                                            width: 195px; height: 64px; line-height: 64px;
+                                            cursor: pointer;
+                                            font: {
+                                                size: 21px;
+                                                weight: 400;
+                                            }
+                                        }
+                                        .upload-name {
+                                            @include padding ($pl:22px);
+                                            @include margin ($mr:25px);
+                                            display: inline-block;
+                                            cursor: default;
+                                            color: $boderGray2;
+                                            line-height: 64px;
+                                            width: 975px; height: 64px; 
+                                            font: {
+                                                size: 20px;
+                                                weight: 300;
+                                            }
+                                        }
+                                    }
+                                }
+                                .bot-item {
+                                    @include margin ($mt:64px,$mb:130px);
+                                    input {
+                                        cursor: pointer;
+                                        border: none;
+                                        color: $whiteColor; background: $mainButtonColor;
+                                        width: 574px; height: 74px;
+                                        font: {
+                                            size: 22px;
+                                            weight: 500;
+                                        }
+                                        &.complete {
+                                            float: right;
+                                        }
+                                        &.cancel {
+                                            background: #fff; border: 1px solid $mainButtonColor;
+                                            color: $mainButtonColor;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="company">
+
+    <typeAlias  alias="egovMap" type="egovframework.rte.psl.dataaccess.util.EgovMap"/>
+    <typeAlias  alias="companyVO" type="egovframework.let.citizen.service.CompanyVO"/>
+
+    <!-- 로그인 처리를 위한 resultMap -->
+    <resultMap id="company" class="egovframework.let.citizen.service.CompanyVO">
+        <result property="id" column="id" columnIndex="1"/>
+        <result property="name" column="name" columnIndex="2"/>
+        <result property="logo" column="logo" columnIndex="3"/>
+        <result property="contact" column="contact" columnIndex="4"/>
+        <result property="address" column="new_addr" columnIndex="5"/>
+        <result property="information" column="company_exp" columnIndex="6"/>
+       
+    </resultMap>
+    <resultMap id="companyOrder" class="egovframework.let.citizen.service.CompanyVO">
+        <result property="id" column="id" columnIndex="1"/>
+        <result property="name" column="name" columnIndex="2"/>
+        <result property="logo" column="logo" columnIndex="3"/>
+        <result property="contact" column="contact" columnIndex="4"/>
+        <result property="address" column="new_addr" columnIndex="5"/>
+        <result property="information" column="company_exp" columnIndex="6"/>
+    	<result property="buildOrderId" column="buildOrderId" columnIndex="7"></result>
+    	<result property="installCompleteDate" column="installCompleteDate" columnIndex="8"></result>
+</resultMap>
+
+    <select id="company.findById" resultMap="company">
+        <![CDATA[
+		SELECT id AS id
+			 , name AS name
+			 , logo AS logo
+			 , contact AS contact
+			 , new_addr AS "address"
+			 , company_exp AS information
+
+		  FROM build_company
+		  WHERE id =#id#
+		  AND  build_company.deleted_at IS NULL
+		 ]]>
+    </select>
+    
+    <select id="company.findALL" resultMap="company">
+        <![CDATA[
+		SELECT id AS id
+			 , name AS name
+			 , logo AS logo
+			 , contact AS contact
+			 , new_addr AS "address"
+			 , company_exp AS information
+
+		  FROM build_company 
+		  WHERE company_state  = 1
+		  AND  build_company.deleted_at IS NULL
+		 ]]>
+    </select>
+	<select id="company.findOrderCompany" resultMap="companyOrder">
+<![CDATA[
+		SELECT bc.id AS id
+             , bc.name AS name
+             , bc.logo AS logo
+             , bc.contact AS contact
+             , bc.new_addr AS "address"
+             , bc.company_exp AS information
+             , bo.id AS buildOrderId
+             , bo.install_complete_date AS installCompleteDate
+        FROM build_order bo
+        INNER JOIN build_company bc 
+        ON bo.build_company_id = bc.id 
+        WHERE bo.user_phone =#id#
+        and bo.state_type in (3,4)
+        AND bo.deleted_at IS NULL
+        AND  bc.deleted_at IS NULL;
+		 ]]>
+</select>
+	<select id="company.findByStatus" resultClass="int" parameterClass="java.lang.String">
+        <![CDATA[
+		SELECT IF(EXISTS(
+    		SELECT * 
+    		from build_company bc 
+    		WHERE bc.id = #id#
+   	 		and( bc.as_state is null or bc.as_state = 0 or bc.company_state is null or bc.company_state = 0 or bc.deleted_at is not null)
+		), 105, #id#);
+		 ]]>
+    </select>
+</sqlMap>

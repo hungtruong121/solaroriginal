@@ -1,0 +1,270 @@
+.product-name #installDate_click {
+    position: absolute;
+    top: 35px;
+    right: 8px;
+    cursor: pointer;
+    width: 21px;
+    height: 21px;
+    background: url(../../img/calendar.png) no-repeat;
+    border: 1px solid #999;
+    color: #444;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+#birthIcon{
+	position: absolute;
+    top: 26px;
+    right: 8px;
+    cursor: pointer;
+    width: 21px;
+    height: 21px;
+    background: url(../../img/calendar.png) no-repeat;
+    border: 1px solid #999;
+    color: #444;
+    font-size: 20px;
+    font-weight: 400;
+}
+#installDate {
+    border-radius: 3px;
+    margin-top: 8px;
+    margin-bottom: 17px;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 100%;
+    height: 35px;
+}
+
+
+.installDatePicker, .birthdayPicker{
+	position: relative;
+}
+
+input#verifyPhone {
+    float: right;
+    margin-top: 8px;
+    width: 100px;
+    height: 35px;
+    background: #485574;
+    border-radius: 3px;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.section.as-content-wrap .section-content form .calendar-wrap .calendar {
+    position: absolute;
+    top: 40px;
+    right: 9px;
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+    background: url(../img/calendar.png) no-repeat;
+    border: 0;
+    background-size: cover;
+}
+
+.section.install-content-wrap .section-content .apply-wrap .bottom-form select.error{
+    color: #999  !important;
+    font-weight: 500 !important;
+}
+.section.install-content-wrap .section-content .apply-wrap .mid-form select.error{
+    color: #999  !important;
+    font-weight: 500 !important;
+}
+
+/* mtm */
+form[name=mtmForm] label#name-error {
+    display: inline-block;
+    margin-top: -6px;
+    margin-bottom: 10px;
+}
+form[name=mtmForm] label#email-error {
+    display: inline-block;
+    margin-top: -6px;
+    margin-bottom: 10px;
+}
+form[name=mtmForm] label#title-error {
+    display: inline-block;
+    margin-top: -6px;
+    margin-bottom: 10px;
+}
+form[name=mtmForm] label#titile-content-error {
+    display: inline-block;
+    margin-top: -6px;
+    margin-bottom: 10px;
+}
+form[name=buildOrderVO] input[readonly] {
+background: #f1f1f1;
+}
+.content-body .section.mtm-content-wrap .section-content .tabs-wrap .panels .panel .mtm-item-content .top-item input{
+    margin-bottom: 10px;
+}
+.content-body .section.mtm-content-wrap .section-content .tabs-wrap .panels .panel .mtm-item-content .mid-item input{
+    margin-bottom: 10px;
+}
+.content-body .section.mtm-content-wrap .section-content .tabs-wrap .panels .panel .mtm-item-content .mid-item textarea {
+    margin-bottom: 10px;
+}
+
+.content-body .section.mtm-content-wrap .section-content .tabs-wrap .panels .panel > ul > li .q-wrap li:nth-child(3){
+    padding-bottom: 6%;
+    min-height: 78px;
+}
+form[name=mtmForm] input{
+    color:  black !important;
+}
+.loadContent{
+	display: none;
+}
+.loadMore {
+    position: fixed;
+    bottom: 0px;
+    text-align: center;
+    width: -webkit-fill-available;
+    display: none;
+}
+.clearBoth {
+    clear: both;
+}
+.notice-item li img {
+    max-width: -webkit-fill-available;
+}
+.active{
+	color: gainsboro !important;
+}
+
+.message-popup.mobile {
+  z-index: 9999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  align-items: center;
+}
+
+.message-popup.mobile .popup-content {
+  position: relative;
+  border-radius: 5px;
+  width: 80%;
+  height: 280px;
+  background: #fff;
+  text-align: center;
+}
+
+.message-popup.mobile .popup-content .content-header {
+  width: 100%;
+  border-bottom: 1px solid #999;
+  height: 60px;
+  line-height: 60px;
+  font-size: 12px;
+}
+
+.message-popup.mobile .popup-content .content-body {
+  padding-top: 40px;
+  color: #1c1d20;
+  line-height: 30px;
+  font-size: 14px;
+}
+
+.message-popup.mobile .popup-content .content-footer {
+  margin-top: 35px;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.message-popup.mobile .popup-content .content-footer input {
+  border-radius: 5px;
+  width: calc( 50% - 15px);
+  background: #366df2;
+  height: 45px;
+  border: 0;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.message-popup.mobile .popup-content .content-footer input:first-child {
+  color: #fff;
+}
+p#messageContent {
+    padding: 0 15px;
+}
+.content-body .section.join-content-wrap .section-content form > input {
+  display: block;
+  width: 100%;
+  height: 45px;
+  background: #366df2;
+  border: 0;
+  color: #fff;
+  font-size: 16px;
+}
+label.error, span.error {
+	color: red !important;
+	width: -webkit-fill-available;
+	word-break: break-word !important;
+	display: block !important;
+	font-size: 10px !important;
+}
+.section.bg-content-wrap .bg-step4 .bg-content img {
+  max-width: -webkit-fill-available !important;
+}
+.swiper-button-next, .swiper-button-prev,.swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet {
+	outline: none !important;
+}
+ form[name=buildOrderVO] input#searchAddress, form[name=buildOrderVO] input.search-address {
+    margin-bottom: 10px;
+    width: 100%;
+    height: 45px;
+    cursor: pointer;
+    background: #485574;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 500;
+ }
+.content-body .section.qna-content-wrap .section-content .tabs-wrap .qna-item-wrap .qna-item > ul > li .q-wrap li:nth-child(2) {
+	min-height: 78px;
+}
+.content-body .section.situ-content-wrap .section-content .tabs-wrap .panels .panel .situ-content1 li a p, 
+.content-body .section.situDepth-content-wrap .section-content .tabs-wrap .panels .panel .situ-content1 li a p {
+    padding-left: 70px;
+}
+.closeDaum_map{
+	position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 17px;
+    height: 17px;
+    background: url(../img/close-button.png);
+    background-size: cover;
+}
+
+.error {
+	margin-top: 10px;
+    padding-bottom: 8px;
+}
+
+.nodata {
+	text-align: center;
+	margin-top:30px;
+}
+.section.product-content-wrap .section-content .product-table table tr th {
+    padding: 0 8px !important;
+}

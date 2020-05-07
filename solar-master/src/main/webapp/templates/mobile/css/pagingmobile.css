@@ -1,0 +1,9 @@
+.pager.number-bar ul li{
+	margin-right: 0;	
+}
+.pager.number-bar ul li a{
+	font-size: 15px;
+	line-height: 27px;
+    width: 26px;
+    height: 26px;
+}

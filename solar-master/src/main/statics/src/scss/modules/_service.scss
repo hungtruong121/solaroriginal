@@ -1,0 +1,20 @@
+.section {
+    &.service-content-wrap {
+        width: $width100; height: 826px;
+        .section-content {
+            .main-content {
+                @include position (relative);
+                p {
+                    @include position (absolute,$t:0,$r:0px);
+                    color: $mainTextColor2;
+                    font: {
+                        size: 18px;
+                    }
+                }
+                img {
+                    @include position (absolute,$t:-70px,$l:30px);
+                }
+            }
+        }
+    }
+}

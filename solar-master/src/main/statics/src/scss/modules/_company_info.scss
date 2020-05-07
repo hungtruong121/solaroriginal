@@ -1,0 +1,157 @@
+.company-content-wrap {
+    .company-content-inner {
+        >button {
+            @include top-button;
+        }
+    }
+    &-grid {
+        width: 1200px;
+        @include margin ($mt:65px,$mb:185px);
+        div {
+            text-align: center;
+            @include padding ($pt:10px);
+            &:hover {
+                transform: scale(1.02);
+            }
+            h2 {
+                line-height: 24px;
+                @include padding ($pt:10px);
+                @include margin ($mb:10px);
+                height: 60px;
+                color: #1c1d1f;
+                font: {
+                    size: 20px;
+                    weight: 700;
+                }
+                &.no-pad {
+                    @include padding ($pt:0);
+                }
+            }
+            img {
+                width: 80%;
+            }
+            button {
+                cursor: pointer;
+                background: #617ee6;
+                width: 80px; height: 32px;
+                border-radius: 16px;
+                margin: 0 auto;
+                color: $whiteColor;
+                font: {
+                    size: 15px;
+                }
+                &:hover {
+                    background: #45589b;
+                }
+            }
+            display: inline-block;
+            width: 220px; height: 248px; margin: 8px;
+            text-align: center;
+            box-shadow: 0 0 8px rgba(0,0,0,.2);
+        }
+    }
+}
+
+/* popup */
+
+.pop-wrap.pop-open {
+    display: flex;
+}
+
+
+.pop-wrap {
+    width: $width100; height: 100%;
+    background: rgba(0,0,0,.3);
+    position: fixed; top: 0; bottom: 0;
+    z-index: 9999;
+    display: none;
+    &-content {
+        margin: 0 auto;
+        box-shadow: 0 0 50px rgba(0,0,0,.3);
+        width: 750px; height: 66vh; background: $whiteColor;
+        @include position (relative); top: 15vh;
+        overflow: hidden;
+        @include padding ($pt:32px,$pl:57px,$pr:57px,$pb:34px);
+        .pop-close {
+            text-indent: -9999px;
+            width: 19px; height: 19px;
+            cursor: pointer;
+            @include position (absolute,$t:24px,$r:24px);
+            background: url('../img/close-button.png') center no-repeat;
+        }
+        input[type="button"] {
+            width: 636px; height: 74px;
+            background: #366df2; color: #fff; cursor: pointer; border: 0;
+            font: {
+                size: 22px;
+                weight: 500;
+            }
+        }
+        &-inner {
+            h2 {
+                color: $bgTextColor;
+                @include padding ($pb:5px);
+                font: {
+                    size: 18px;
+                }
+            }
+            .inner-title {
+                @include flex (flex,center);
+                @include border-bottom;
+                @include margin ($mb:25px);
+                height: 127px;
+                &:after {
+                    @include clearBoth();
+                }
+                img {
+                    float: left;
+                    width: 171px;
+                    background: url('../img/popup-logo.png') center center no-repeat;
+                    @include margin ($mr:40px);
+                }
+                .tBox {
+                    float: left;
+                    p {
+                        @include clearBoth();
+                        float: left;
+                        @include padding ($pl:17px);
+                        @include position (relative);
+                        color: $mainTextColor;
+                        line-height: 27px;
+                        font: {
+                            size: 15px;
+                            weight: 400;
+                        }
+                        &:nth-of-type(1):before {
+                            content: "";
+                            width: 14px; height: 14px; display: inline-block;
+                            background: url('../img/popup-icon1.png') no-repeat;
+                            @include position (absolute,$t:7px,$l:-3px);
+                        }
+                        &:nth-of-type(2):before {
+                            content: "";
+                            width: 14px; height: 16px; display: inline-block;
+                            background: url('../img/popup-icon2.png') no-repeat;
+                            @include position (absolute,$t:5px,$l:-3px);
+                        }
+                    }
+                }
+            }
+            .inner-item {
+                .exp-box {
+                    padding: 10px;
+                    text-align: center; line-height: 31px;
+                    height: 29vh; background: #fff;
+                    overflow-y: scroll;
+                    color: #1c1d1f;
+                    font: {
+                        size: 18px;
+                    }
+                }
+                input {
+                    @include margin ($mt:5vh)
+                }
+            }
+        }
+    }
+}

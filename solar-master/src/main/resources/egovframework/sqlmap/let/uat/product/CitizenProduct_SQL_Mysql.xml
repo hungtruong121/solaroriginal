@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="product">
+
+    <typeAlias  alias="egovMap" type="egovframework.rte.psl.dataaccess.util.EgovMap"/>
+    <typeAlias  alias="productInfoVO" type="egovframework.let.citizen.service.ProductInfoVO"/>
+
+    <!-- 로그인 처리를 위한 resultMap -->
+    <resultMap id="productInfo" class="egovframework.let.citizen.service.ProductInfoVO">
+<result property="supplier" column="ad1"></result>
+<result property="kinds" column="ad2"></result>
+<result property="productName" column="ad8"></result>
+<result property="capacity" column="ad3"></result>
+<result property="specification" column="ad10"></result>
+<result property="price" column="ad5"></result>
+<result property="charge" column="ad7"></result>
+<result property="efficiency" column="ad9"></result>
+<result property="weight" column="ad11"></result>
+<result property="period" column="ad13"></result></resultMap>
+
+    <select id="product.FindAll" resultMap="productInfo">
+<![CDATA[
+		SELECT bcp.ad1 AS ad1,
+			   bcp.ad2 AS ad2,
+		       bcp.ad8 AS ad8,
+		       bcp.ad3 AS ad3,
+		       bcp.ad10 AS ad10,
+		       bcp.ad5 AS ad5,
+		       bcp.ad7 AS ad7,
+		       bcp.ad9 AS ad9,
+		       bcp.ad11 AS ad11,
+		       bcp.ad13 AS ad13
+		FROM build_company_product bcp
+		 ]]>
+</select>
+</sqlMap>

@@ -1,0 +1,187 @@
+.section {
+    &.year-content-wrap {
+        .section-content {
+            @include border-bottom;
+            .circle-wrap {
+                width: 830px;
+                margin: 0 auto 61px;
+                &:after {
+                    @include clearBoth();
+                }
+                div {
+                    @include position (relative);
+                    float: left;
+                    width: 110px; height: 110px;
+                    border-radius: 110px;
+                    strong {
+                        color: $whiteColor;
+                        @include padding ($pl:18px);
+                        line-height: 110px;
+                        font: {
+                            size: 35px;
+                        }
+                    }
+                    span {
+                        @include position (absolute,$t:-35px,$l:35px);
+                        width: 110px;
+                        font: {
+                            weight: 500;
+                        }
+                    }
+                    &.circle-content1 {
+                        @include margin ($mt:45px);
+                        background: #adcb00;
+                        span {
+                            color: #adcb00;
+                        }
+                        &:before {
+                            @include position (absolute,$t:45px,$r:-49px);
+                            content: ""; display: block; 
+                            width: 19px; height: 19px; background: url('../img/diss-icon1.png');
+                        }
+                    }
+                    &.circle-content2 {
+                        @include margin ($mt:45px,$ml:80px);
+                        background: #ff671f;
+                        span {
+                            color: #ff671f;
+                        }
+                        &:before {
+                            @include position (absolute,$t:45px,$r:-49px);
+                            content: ""; display: block; 
+                            width: 19px; height: 19px; background: url('../img/diss-icon1.png');
+                        }
+                    }
+                    &.circle-content3 {
+                        @include margin ($mt:45px,$ml:80px);
+                        background: #ffcd1f;
+                        span {
+                            color: #ffcd1f;
+                        }
+                        &:before {
+                            @include position (absolute,$t:45px,$r:-86px);
+                            content: ""; display: block; 
+                            width: 42px; height: 14px; background: url('../img/diss-icon2.png');
+                        }
+                    }
+                    &.circle-content4 {
+                        @include padding ($pt:45px,$pl:30px,$pr:30px);
+                        @include margin ($ml:130px);
+                        text-align: center;
+                        background: $mainButtonColor;
+                        border-radius: 207px;
+                        width: 207px; height: 207px;
+                        strong {
+                            @include padding ($pl:0px);
+                            line-height: 53px;
+                            font: {
+                                size: 45px;
+                            }
+                        }
+                    }
+                }
+            }
+            table {
+                width: $width100;
+                text-align: center;
+                border-collapse: collapse;
+                caption {
+                    display: none;
+                }
+                tr {
+                    th {
+                        border: 1px solid $whiteColor;
+                        height: 64px;
+                        color: $bgTextColor;
+                        background: #d4d4d4;
+                        font: {
+                            size: 24px;
+                        }
+                    }
+                    td {
+                        height: 93px;
+                        color: $mainTextColor;
+                        border: 1px solid $whiteColor;
+                        background: #f4f4f4;
+                        font: {
+                            size: 22px;
+                            weight: 300;
+                        }
+                    }
+                }
+            }
+            .graph-wrap {
+                @include margin ($mt:60px,$mb:95px);
+                width: 1200px; height: 350px;
+                background: url('../img/diss-graph.png') center center no-repeat;
+            }
+        }
+    }
+    &.diss-content-wrap {
+        .section-content {
+            @include margin ($mb:190px);
+            table {
+                border-collapse: collapse;
+                width: $width100;
+                text-align: center;
+                line-height: 20px;
+                caption {
+                    &:after {
+                        @include clearBoth();
+                    }
+                    p {
+                        color: $mainTextColor; 
+                        font: {
+                            size: 14px;
+                            weight: 300;
+                        }
+                        &:first-child {
+                            float: left;
+                        }
+                        &:last-child {
+                            float: right;
+                        }
+                    }
+                }
+                tr {
+                    height: 50px;
+                    th {
+                        background: #d4d4d4;
+                        color: $bgTextColor;
+                        border: 1px solid $whiteColor;
+                        font: {
+                            size: 20px;
+                            weight: 400;
+                        }
+                    }
+                    td {
+                        background: #f4f4f4;
+                        color: $mainTextColor;
+                        border: 1px solid $whiteColor;
+                        font: {
+                            size: 18px;
+                            weight: 300;
+                        }
+                    }
+                    &:last-child {
+                        td {
+                            height: 65px;
+                            color: $whiteColor;
+                            background: #485574;
+                        }
+                    }
+                    &:nth-child(4) {
+                        td:nth-child(1),td:nth-child(2) {
+                            color: $bgTextColor;
+                        }
+                    }
+                    &:nth-child(7) {
+                        td:nth-child(1) {
+                            color: $bgTextColor;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
