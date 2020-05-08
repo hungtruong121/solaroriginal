@@ -1,0 +1,193 @@
+.section {
+    &.situ-content-wrap {
+        .section-content {
+            .icon-wrap {
+                @include margin ($mt:60px,$mb:80px);
+                .icon-content {
+                    width: 1100px; margin: 0 auto;
+                    &:after {
+                        @include clearBoth();
+                    }
+                    li {
+                        float: left;
+                        &:nth-child(odd) {
+                            width: 180px; height: 252px;
+                            text-align: center;
+                            color: $boderGray2;
+                            line-height: 25px;
+                            font: {
+                                size: 20px;
+                                weight: 400;
+                            }
+                            img {
+                                @include margin ($mb:25px);
+                            }
+                        }
+                        &:nth-child(even) {
+                            @include padding ($pl:19px,$pt:85px);
+                            width: 126px; 
+                        }
+                    }
+                    &.as-content {
+                        margin: 0 auto;
+                        li {
+                            &:first-child {
+                                img {
+                                    @include margin ($mb:39px);
+                                }
+                            }
+                            &:last-child {
+                                img {
+                                    @include margin ($mb:39px);
+                                }
+                            }
+                            &:nth-child(odd) {
+                                width: 180px; height: 252px;
+                            }
+                            &:nth-child(even) {
+                            @include padding ($pl:57.5px,$pt:85px);
+                            width: 280px; 
+                        }
+                        }
+                    }
+                }
+            }
+            .tabs-wrap {
+                @include margin ($mb:143px);
+                .tabs {
+                    &:after {
+                        @include clearBoth();
+                    }
+                    li {
+                        float: left;
+                        background: #f1f1f1;
+                        color: $mainTextColor5;
+                        width: 50%;
+                        text-align: center;
+                        a {
+                            height: 80px;
+                            line-height: 80px;
+                            font: {
+                                size: 28px;
+                            }
+                            display: block;
+                            &.on {
+                                background: #485574;
+                                color: #fff;
+                                font: {
+                                    weight: 600;
+                                }
+                                border: none;
+                            }
+                        }
+                    }
+                }
+                .panel {
+                    table {
+                        caption {
+                            @include padding ($pb:30px);
+                            text-align: left;
+                            color: $mainTextColor3;
+                            font: {
+                                size: 28px;
+                                weight: 600;
+                            }
+                        }
+                        border: 1px solid $boderGray2;
+                        border-collapse: collapse;
+                        width: 1100px; margin: 0 auto;
+                        tr {
+                            height: 84px;
+                            font: {
+                                size: 20px;
+                            }
+                            th {
+                                width: 306px;
+                                border-bottom: 1px solid $boderGray2;
+                                border-right: 1px solid #cecece;
+                                @include padding ($pl:36px);
+                                background: #f1f1f1;
+                                text-align: left;
+                                color: $mainTextColor3;
+                            }
+                            td {
+                                border-bottom: 1px solid $boderGray2;
+                                @include padding ($pl:36px);
+                                color: $mainTextColor;
+                            }
+                            &.textarea-ex {
+                                th {
+                                    @include padding ($pt:36px);
+                                }
+                                td {
+                                    @include padding ($pt:36px,$pb:36px);
+                                }
+                            }
+                        }
+                        &.margin-table {
+                            @include margin ($mt:60px);
+                        }
+                        &.plus-table {
+                            @include margin ($mt:60px);
+                            tr {
+                                th {
+                                    @include padding ($pl:0);
+                                    text-align: center;
+                                    border-right: 1px solid #999;
+                                    &:first-child {
+                                        width: 10%;
+                                    }
+                                    &:last-child {
+                                        width: 15%;
+                                    }
+                                    &:nth-last-child(2) {
+                                        width: 15%;
+                                    }
+                                }
+                                td {
+                                    text-align: center;
+                                    @include padding ($pl:0);
+                                    &:first-child {
+                                        font: {
+                                            weight: 700;
+                                        }
+                                    }
+                                    &:last-child {
+                                        background: url(../img/table-search.png) center center no-repeat;
+                                        div {
+                                            width: 33px; height: 34px; margin: 0 auto;
+                                            cursor: pointer;
+                                        }
+                                    }
+                                    &.check {
+                                        text-indent: -9999px;
+                                        background: url(../img/blue-check.png) center center no-repeat;
+                                        background-siz: 50%;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .focus-content {
+                        display: none;
+                        &.check-content {
+                            @include margin ($mt:50px);
+                            display: block;
+                            button {
+                                display: block;
+                                width: 1100px; background: #366df2;
+                                margin: 40px auto 0;
+                                height: 74px;
+                                color: #fff;
+                                font: {
+                                    size: 22px;
+                                    weight: 500;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

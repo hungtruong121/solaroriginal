@@ -1,0 +1,391 @@
+@@include('modules/sub_header.html', {"title": "Home", "class": ""})
+
+<div class="content-body">
+    <div class="sub-content-head-wrap sub-content5">
+        @@include('modules/sub_content_head.html')
+        <div class="sub-navigation-wrap">
+            <div class="sub-navigation">
+                <div class="dropdown">
+                    <button class="dropdown-button">
+                        <span>게시판</span>
+                        <img src="./img/ico_small_next.png" alt="small_next">
+                    </button>
+                    <div class="dropdown-menu">
+                        <ul>
+                            <li><a href="about_us.html">태양광 지원 센터</a></li>
+                            <li><a href="mini_power_plant.html">태양광 미니 발전소</a></li>
+                            <li><a href="service.html">설치 안내</a></li>
+                            <li class="alert-pop"><a href="install_apply.html">온라인 신청</a></li>
+                            <li><a href="notice.html">게시판</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="dropdown-button">
+                        <span>1:1문의</span>
+                        <img src="./img/ico_small_next.png" alt="small_next">
+                    </button>
+                    <div class="dropdown-menu">
+                        <ul>
+                            <li><a href="notice.html">공지사항</a></li>
+                            <li><a href="mtm.html">1:1문의</a></li>
+                            <li><a href="qna.html">자주 하는 질문</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section mtm-content-wrap">
+        <div class="section-content mtm-content">
+            <button class="top-button">up</button>
+            <div class="sub-title-wrap">
+                <h2 class="content-title">1:1문의</h2>
+                <p class="content-contents">1:1문의를 남겨주시면 서울시 햇빛마루 전문 상담직원이 답변을 드립니다.</p>
+            </div>
+            <div class="tabs-wrap">
+                <ul class="tabs">
+                    <li><a href="#tab1" class="on">1:1문의</a></li>
+                    <li><a href="#tab2">문의내역</a></li>
+                </ul>
+                <div class="panels">
+                    <div class="panel mtm-item-wrap" id="tab1">
+                        <form action="" class="mtm-item-content">
+                            <div class="top-item">
+                                <h3>고객정보</h3>
+                                <div class="name-box">
+                                    이름<span>*</span><br>
+                                    <input type="text" name="name" placeholder="이름을 입력해주세요." required>
+                                </div>
+                                <div class="mail-box">
+                                    이메일<span>*</span><br>
+                                    <input type="email" name="email" placeholder="이메일을 입력해주세요." required>
+                                </div>
+                                <div class="tel-box">
+                                    전화번호<br>
+                                    <input type="tel" name="tel" placeholder="전화번호를 입력해주세요.">
+                                </div>
+                            </div>
+                            <div class="mid-item">
+                                문의유형<span>*</span>
+                                <select name="case" id="q-case">
+                                    <option value="" disabled selected>문의유형을 선택해주세요.</option>
+                                    <option value="case1">유형1</option>
+                                    <option value="case2">유형2</option>
+                                    <option value="case3">유형3</option>
+                                </select>
+                                제목<span>*</span>
+                                <input type="text" name="title" placeholder="제목을 입력해주세요." required>
+                                내용<span>*</span>
+                                <textarea name="titile-content" id="titile-content" cols="30" rows="10" placeholder="내용을 입력해주세요." required></textarea>
+                                첨부파일
+                                <div class="fileBox">
+                                   <input class="upload-name" dsiabled placeholder="첨부파일을 등록해주세요." readonly>
+                                    <label for="ex-file">찾아보기</label>
+                                    <input type="file" id="ex-file" class="upload-hidden">
+                                </div>
+                            </div>
+                            <div class="bot-item">
+                                <input type="button" class="cancel" value="취소" onClick="location.href='index.html'">
+                                <input type="submit" class="complete" value="신청 완료" onClick="location.href='mtm_list.html'">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="panel" id="tab2">
+                        <div class="tables">
+                            <table border="1" frame="void" class="table" id="num1">
+                                <caption>문의내역</caption>
+                                <tr>
+                                    <th>번호</th>
+                                    <th>진행상황</th>
+                                    <th>제목</th>
+                                    <th>작성자</th>
+                                    <th>작성일</th>
+                                </tr>
+                                <tr>
+                                    <td>23</td>
+                                    <td>답변완료</td>
+                                    <td><a href="mtm_deep.html">설치일 변경문의 드립니다.</a></td>
+                                    <td>김*환</td>
+                                    <td>2019-03-11</td>
+                                </tr>
+                                <tr>
+                                    <td>22</td>
+                                    <td class="red-text">진행중</td>
+                                    <td><a href="">문의드립니다.</a></td>
+                                    <td>김*환</td>
+                                    <td>2019-03-10</td>
+                                </tr>
+                                <tr>
+                                    <td>21</td>
+                                    <td class="red-text">진행중</td>
+                                    <td><a href="">답변완료</a></td>
+                                    <td>김*환</td>
+                                    <td>2019-03-09</td>
+                                </tr>
+                                <tr>
+                                    <td>20</td>
+                                    <td>답변완료</td>
+                                    <td><a href="">답변완료</a></td>
+                                    <td>김*환</td>
+                                    <td>2019-03-05</td>
+                                </tr>
+                                <tr>
+                                    <td>19</td>
+                                    <td>답변완료</td>
+                                    <td><a href="">답변완료</a></td>
+                                    <td>김*환</td>
+                                    <td>2019-03-11</td>
+                                </tr>
+                                <tr>
+                                    <td>18</td>
+                                    <td>답변완료</td>
+                                    <td><a href="">답변완료</a></td>
+                                    <td>김*환</td>
+                                    <td>2019-03-10</td>
+                                </tr>
+                                <tr>
+                                    <td>17</td>
+                                    <td>답변완료</td>
+                                    <td><a href="">답변완료</a></td>
+                                    <td>김*환</td>
+                                    <td>2019-03-11</td>
+                                </tr>
+                                <tr>
+                                    <td>16</td>
+                                    <td>답변완료</td>
+                                    <td><a href="">답변완료</a></td>
+                                    <td>김*환</td>
+                                    <td>2019-03-08</td>
+                                </tr>
+                                <tr>
+                                    <td>15</td>
+                                    <td>답변완료</td>
+                                    <td><a href="">답변완료</a></td>
+                                    <td>김*환</td>
+                                    <td>2019-03-03</td>
+                                </tr>
+                                <tr>
+                                    <td>14</td>
+                                    <td>답변완료</td>
+                                    <td><a href="">답변완료</a></td>
+                                    <td>김*환</td>
+                                    <td>2019-03-11</td>
+                                </tr>
+                                <tr>
+                                    <td>13</td>
+                                    <td>답변완료</td>
+                                    <td><a href="">답변완료</a></td>
+                                    <td>김*환</td>
+                                    <td>2019-03-03</td>
+                                </tr>
+                                <tr>
+                                    <td>12</td>
+                                    <td>답변완료</td>
+                                    <td><a href="">답변완료</a></td>
+                                    <td>김*환</td>
+                                    <td>2019-03-11</td>
+                                </tr>
+                            </table>
+                            <table border="1" frame="void" class="table" id="num2">
+                                <caption>문의내역</caption>
+                                <tr>
+                                    <th>번호2</th>
+                                    <th>유형</th>
+                                    <th>제목</th>
+                                    <th>진행상황</th>
+                                    <th>작성일</th>
+                                </tr>
+                                <tr>
+                                    <td>23</td>
+                                    <td>답변완료</td>
+                                    <td><a href="">설치일 변경문의 드립니다.</a></td>
+                                    <td class="red-text">진행중</td>
+                                    <td>2019-03-11</td>
+                                </tr>
+                                <tr>
+                                    <td>22</td>
+                                    <td>답변완료</td>
+                                    <td><a href="">문의드립니다.</a></td>
+                                    <td class="red-text">진행중</td>
+                                    <td>2019-03-10</td>
+                                </tr>
+                                <tr>
+                                    <td>21</td>
+                                    <td>답변완료</td>
+                                    <td><a href="">답변완료</a></td>
+                                    <td class="red-text">진행중</td>
+                                    <td>2019-03-09</td>
+                                </tr>
+                                <tr>
+                                    <td>20</td>
+                                    <td>답변완료</td>
+                                    <td><a href="">답변완료</a></td>
+                                    <td>김*환</td>
+                                    <td>2019-03-05</td>
+                                </tr>
+                                <tr>
+                                    <td>19</td>
+                                    <td>답변완료</td>
+                                    <td><a href="">답변완료</a></td>
+                                    <td>김*환</td>
+                                    <td>2019-03-11</td>
+                                </tr>
+                                <tr>
+                                    <td>18</td>
+                                    <td>답변완료</td>
+                                    <td><a href="">답변완료</a></td>
+                                    <td>김*환</td>
+                                    <td>2019-03-10</td>
+                                </tr>
+                                <tr>
+                                    <td>17</td>
+                                    <td>답변완료</td>
+                                    <td><a href="">답변완료</a></td>
+                                    <td>김*환</td>
+                                    <td>2019-03-11</td>
+                                </tr>
+                                <tr>
+                                    <td>16</td>
+                                    <td>답변완료</td>
+                                    <td><a href="">답변완료</a></td>
+                                    <td>김*환</td>
+                                    <td>2019-03-08</td>
+                                </tr>
+                                <tr>
+                                    <td>15</td>
+                                    <td>답변완료</td>
+                                    <td><a href="">답변완료</a></td>
+                                    <td>김*환</td>
+                                    <td>2019-03-03</td>
+                                </tr>
+                                <tr>
+                                    <td>14</td>
+                                    <td>답변완료</td>
+                                    <td><a href="">답변완료</a></td>
+                                    <td>김*환</td>
+                                    <td>2019-03-11</td>
+                                </tr>
+                                <tr>
+                                    <td>13</td>
+                                    <td>답변완료</td>
+                                    <td><a href="">답변완료</a></td>
+                                    <td>김*환</td>
+                                    <td>2019-03-03</td>
+                                </tr>
+                                <tr>
+                                    <td>12</td>
+                                    <td>답변완료</td>
+                                    <td><a href="">답변완료</a></td>
+                                    <td>김*환</td>
+                                    <td>2019-03-11</td>
+                                </tr>
+                            </table>
+                            <table border="1" frame="void" class="table" id="num3">
+                                <caption>문의내역</caption>
+                                <tr>
+                                    <th>번호3</th>
+                                    <th>유형</th>
+                                    <th>제목</th>
+                                    <th>진행상황</th>
+                                    <th>작성일</th>
+                                </tr>
+                                <tr>
+                                    <td>23</td>
+                                    <td>답변완료</td>
+                                    <td><a href="">설치일 변경문의 드립니다.</a></td>
+                                    <td class="red-text">진행중</td>
+                                    <td>2019-03-11</td>
+                                </tr>
+                                <tr>
+                                    <td>22</td>
+                                    <td>답변완료</td>
+                                    <td><a href="">문의드립니다.</a></td>
+                                    <td class="red-text">진행중</td>
+                                    <td>2019-03-10</td>
+                                </tr>
+                                <tr>
+                                    <td>21</td>
+                                    <td>답변완료</td>
+                                    <td><a href="">답변완료</a></td>
+                                    <td class="red-text">진행중</td>
+                                    <td>2019-03-09</td>
+                                </tr>
+                                <tr>
+                                    <td>20</td>
+                                    <td>답변완료</td>
+                                    <td><a href="">답변완료</a></td>
+                                    <td>김*환</td>
+                                    <td>2019-03-05</td>
+                                </tr>
+                                <tr>
+                                    <td>19</td>
+                                    <td>답변완료</td>
+                                    <td><a href="">답변완료</a></td>
+                                    <td>김*환</td>
+                                    <td>2019-03-11</td>
+                                </tr>
+                                <tr>
+                                    <td>18</td>
+                                    <td>답변완료</td>
+                                    <td><a href="">답변완료</a></td>
+                                    <td>김*환</td>
+                                    <td>2019-03-10</td>
+                                </tr>
+                                <tr>
+                                    <td>17</td>
+                                    <td>답변완료</td>
+                                    <td><a href="">답변완료</a></td>
+                                    <td>김*환</td>
+                                    <td>2019-03-11</td>
+                                </tr>
+                                <tr>
+                                    <td>16</td>
+                                    <td>답변완료</td>
+                                    <td><a href="">답변완료</a></td>
+                                    <td>김*환</td>
+                                    <td>2019-03-08</td>
+                                </tr>
+                                <tr>
+                                    <td>15</td>
+                                    <td>답변완료</td>
+                                    <td><a href="">답변완료</a></td>
+                                    <td>김*환</td>
+                                    <td>2019-03-03</td>
+                                </tr>
+                                <tr>
+                                    <td>14</td>
+                                    <td>답변완료</td>
+                                    <td><a href="">답변완료</a></td>
+                                    <td>김*환</td>
+                                    <td>2019-03-11</td>
+                                </tr>
+                                <tr>
+                                    <td>13</td>
+                                    <td>답변완료</td>
+                                    <td><a href="">답변완료</a></td>
+                                    <td>김*환</td>
+                                    <td>2019-03-03</td>
+                                </tr>
+                                <tr>
+                                    <td>12</td>
+                                    <td>답변완료</td>
+                                    <td><a href="">답변완료</a></td>
+                                    <td>김*환</td>
+                                    <td>2019-03-11</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <ul class="num">
+                            <li><a href="#num1" class="on">1</a></li>
+                            <li><a href="#num2">2</a></li>
+                            <li><a href="#num3">3</a></li>
+                        </ul>
+                    </div> <!-- 2019-06-10 -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@@include('modules/footer.html')

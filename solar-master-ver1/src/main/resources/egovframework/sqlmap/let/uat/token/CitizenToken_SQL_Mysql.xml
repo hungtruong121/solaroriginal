@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="TokenVerification">
+
+	<typeAlias  alias="egovMap" type="egovframework.rte.psl.dataaccess.util.EgovMap"/>
+	<typeAlias  alias="tokenVO" type="egovframework.com.cmm.TokenVO"/>
+
+	<!-- 로그인 처리를 위한 resultMap -->
+	<resultMap id="token" class="egovframework.com.cmm.TokenVO">
+        <result property="id" column="id" columnIndex="1"/>
+        <result property="phone" column="phone" columnIndex="2"/>
+        <result property="number" column="number" columnIndex="3"/>
+        <result property="use_yn" column="use_yn" columnIndex="4"/>
+        <result property="createdAt" column="createdAt" columnIndex="5"/>
+    </resultMap>
+
+	<select id="tokenDAO.verifyToken" resultMap="token">
+		<![CDATA[
+		SELECT id AS id
+			 , phone AS phone
+			 , number AS number
+			 , use_yn AS use_yn
+			 , created_at AS createdAt
+		  FROM citizen_user_auth
+		 WHERE phone = #phone#
+		 	AND number = #number#
+		 	AND use_yn = 'N'
+		 	AND deleted_at IS NULL
+	  ORDER BY created_at DESC
+         LIMIT 1
+		 ]]>
+	</select>
+
+	<insert id="tokenDAO.insertToken" parameterClass="tokenVO">
+		INSERT INTO citizen_user_auth
+		(phone, number, use_yn, created_at)
+		values
+		( #phone#, #number#, 'N', NOW())
+		<selectKey resultClass="int" keyProperty="id" >
+			SELECT @@IDENTITY AS id
+		</selectKey>
+	</insert>
+</sqlMap>

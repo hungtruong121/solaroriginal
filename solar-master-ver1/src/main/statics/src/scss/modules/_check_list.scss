@@ -1,0 +1,141 @@
+.section {
+    &.strategy-content-wrap {
+        @include margin($mb:80px);
+        .section-content {
+            .content1 {
+                @include position(relative);
+                img {
+                    @include position(absolute,$t:-40px,$l:-336px);
+                }
+            }
+            .content2 {
+                @include position(relative);
+                text-align: right;
+                img {
+                    @include position (absolute,$t:-70px,$r:-327px);
+                }
+                h3 {
+                    margin-right: -10px;
+                    span {
+                        margin-right: 10px;
+                    }
+                } /* 2019-06-05 */
+            }
+            .content3 {
+                @include position(relative);
+                img {
+                    @include position (absolute,$t:-90px,$l:-315px);
+                }
+            }
+            .content4 {
+                @include position(relative);
+                text-align: right;
+                img {
+                    @include position (absolute,$t:-90px,$r:-328px);
+                }
+            }
+            .content5 {
+                @include position(relative);
+                img {
+                    @include position(absolute,$t:-40px,$l:-336px);
+                }
+            }
+            @include padding ($pb:50px);
+            width: 553px; margin: 0 auto;
+            h3 {
+                @include margin($mb:33px);
+                line-height: 40px;
+                color: $mainTextColor;
+                font: {
+                    size: 40px;
+                }
+                span {
+                    font: {
+                        size: 30px;
+                    }
+                }
+            }
+            ul {
+                @include margin ($mb:63px);
+                color: #6d6e71;
+                line-height: 24px;
+                font: {
+                    size: 18px;
+                }
+                li {
+                    &:nth-of-type(1) {
+                        @include padding($pb:10px);
+                    }
+                }
+            }
+        }
+    }
+    &.introduct-content-wrap {
+        @include margin ($mb:150px);
+        .section-content {
+            border-top: 1px solid #d7d7d7;
+            text-align: center;
+            h3 {
+                color: $bgTextColor;
+                font: {
+                    size: 20px;
+                }
+            }
+            .bottom-box-wrap {
+                &:after {
+                    @include clearBoth();
+                }
+                .bottom-box-content {
+                    float: left;
+                    @include margin ($mr:63px);
+                    @include padding ($pt:152px);
+                    @include position (relative);
+                    width: 220px; height: 334px; border: 1px solid #cfcfcf;
+                    p {
+                        line-height: 20px;
+                        color: $mainTextColor;
+                        font: {
+                            size: 15px;
+                        }
+                    }
+                    span {
+                        @include position (absolute,$t:152,$l:64px);
+                        display: block;
+                        background: #dcdcdc;
+                        width: 93px; height: 1px;
+                    }
+                    &1 {
+                        @include margin ($ml:66px);
+                        background: url('../img/intro-icon5.png') center 36px no-repeat;
+                        h3 {
+                            @include padding ($pt:27px,$pb:25px);
+                        }
+                    }
+                    &2 {
+                        background: url('../img/intro-icon6.png') center 39px no-repeat;
+                        h3 {
+                            @include padding ($pb:38px);
+                        }
+                    }
+                    &3 {
+                        background: url('../img/intro-icon7.png') center 36px no-repeat;
+                    }
+                    &4 {
+                        background: url('../img/intro-icon8.png') center 40px no-repeat;
+                        @include margin ($mr:0px);
+                    }
+                    &3,&4 {
+                        h3 {
+                            @include padding ($pb:28px);
+                        }
+                    }
+                    &2,&3,&4 {
+                        h3 {
+                            @include padding ($pt:43px);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,219 @@
+.section {
+    &.zone-content-wrap {
+        .section-content {
+            @include border-bottom;
+            .zone-chart {
+                text-align: center; color: $whiteColor;
+                @include padding ($pb:174px);
+                .top-box {
+                    width: 309px; height: 190px; margin: 0 auto 62px;
+                    text-align: center; color: $whiteColor;
+                    h2 {
+                        border-radius: 10px 10px 0 0; 
+                        border: 1px solid #ccc; border-bottom: none;
+                        width: 309px; height: 77px; background: $mainButtonColor;
+                        line-height: 77px;
+                        font: {
+                            size: 30px;
+                        }
+                    }
+                    p {
+                        border-radius: 0 0 10px 10px; 
+                        border: 1px solid #ccc; border-top: none;
+                        width: 309px; height: 113px;
+                        background: #eff2fa;
+                        color: #6d6e71;
+                        line-height: 113px;
+                        font: {
+                            size: 23px;
+                        }
+                    }
+                    &:after {
+                        content: ""; display: block;
+                        width: 1px; height: 217px; margin: 0 auto;
+                        background: #ccc;
+                    }
+                }
+                .mid-box {
+                    position: relative;
+                    margin-bottom: 63px; float: right;
+                    width: 371px; height: 84px; background: #6c6b88;
+                    border-radius: 42px;
+                    p {
+                        font: {
+                            size: 27px;
+                            weight: 500;
+                        }
+                        strong {
+                            line-height: 84px;
+                        }
+                    }
+                    &:before{
+                        content: ""; display: block;
+                        width: 229.5px; height: 1px; margin: 0 auto;
+                        background: #ccc; position: absolute; left: -229.5px; top: 41.5px;
+                    }
+                }
+                .bottom-box-wrap {
+                    padding-top: 154px;
+                    &:before {
+                        content: ""; display: block;
+                        width: 976px; height: 1px; margin: 0 auto;
+                        background: #ccc;
+                    }
+                    &:after {
+                        @include clearBoth;
+                    }
+                    div {
+                        @include margin ($mr:25px);
+                        width: 219px; height: 191px;
+                        text-align: center; float: left;
+                        h2 {
+                            border-radius: 10px 10px 0 0; 
+                            border: 1px solid #ccc; border-bottom: none;
+                            width: 219px; height: 59px; background: #9b9ba8;
+                            line-height: 59px;
+                            font: {
+                                size: 25px;
+                            }
+                        }
+                        p {
+                            @include padding ($pt:45px);
+                            border-radius: 0 0 10px 10px; 
+                            border: 1px solid #ccc; border-top: none;
+                            width: 219px; height: 132px;
+                            background: $whiteColor;
+                            color: $mainTextColor2;
+                            font: {
+                                size: 20px;
+                            }
+                        }
+                        &:before {
+                            content: ""; display: block;
+                            width: 1px; height: 54px; margin: 0 auto;
+                            background: #ccc;
+                        }
+                        &.bottom-box1 {
+                            @include margin ($ml:3px,$mr:24px);
+                        }
+                        &.bottom-box3 {
+                            @include margin ($ml:.5px);
+                        }
+                        &.bottom-box3,&.bottom-box4,&.bottom-box5 {
+                            p {
+                                @include padding ($pt:35px);
+                            }
+                        }
+                        &.bottom-box4 {
+                            @include margin ($mr:24.5px);
+                        }
+                        &.bottom-box5 {
+                            @include margin ($mr:0);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.map-content-wrap {
+        .section-content {
+            @include border-bottom;
+            @include padding ($pb:100px);
+            .text-box {
+                float: left;
+                div {
+                    width: 436px; height: 161px;
+                    @include border-bottom;
+                    @include padding ($pt:20px,$pl:15px);
+                    span {
+                        @include margin ($mr:11px,$mb:3px);
+                        display: inline-block; background: #000;
+                        width: 10px; height: 10px; border-radius: 10px;
+                    }
+                    &:nth-child(1) {
+                        span {
+                            background: $mainButtonColor;
+                        }
+                    }
+                    &:nth-child(2) {
+                        span {
+                            background: #7dbaff;
+                        }
+                    }
+                    &:nth-child(3) {
+                        span {
+                            background: #16b29f;
+                        }
+                    }
+                    &:nth-child(4) {
+                        span {
+                            background: #185bcd;
+                        }
+                    }
+                    &:nth-child(5) {
+                        span {
+                            background: #95deef;
+                        }
+                    }
+                    &:last-child {
+                        border-bottom: none;
+                        span {
+                            background: #05dcc0;
+                        }
+                    }
+                    p {
+                        @include padding ($pb:12px);
+                        color: $bgTextColor;
+                        font: {
+                            size: 22px
+                        }
+                    }
+                    ul {
+                        @include padding ($pl:44px);
+                        li {
+                            @include position (relative);
+                            color: $mainTextColor;
+                            font: {
+                                size: 18px;
+                            }
+                            &:first-child {
+                                line-height: 20px;
+                                &:before {
+                                    @include position (absolute,$l:-23px);
+                                    content: ""; display: block;
+                                    width: 14px; height: 19px; background: url('../img/map-icon1.png');
+                                }
+                            }
+                            &:last-child {
+                                line-height: 40px;
+                                &:before {
+                                    @include position (absolute,$t:13px,$l:-23px);
+                                    content: ""; display: block;
+                                    width: 16px; height: 16px; background: url('../img/map-icon2.png');
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .map-box {
+                float: right; margin-top: 100px;
+                width: 719px; height: 640px; background: url('../img/map.png');
+            }
+            &:after {
+                @include clearBoth();
+            }
+        }
+    }
+    &.callcenter-content-wrap {
+        .section-content {
+            @include padding ($pb:100px);
+            .callcenter-item {
+                @include margin ($mb:35px);
+                &:last-child {
+                    @include margin($mb:0);
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,123 @@
+.section {
+    &.notice-content-wrap {
+        .section-content {
+            ::placeholder {
+                color: $boderGray2;
+                font: {
+                    size: 20px;
+                    weight: 300;
+                }
+            }
+            .search-bar {
+                input {
+                    border: 1px solid $boderGray2;
+                    @include padding ($pl:22px);
+                    margin-right: 8px;
+                    width: calc( 100% - 110px ); height: 64px;
+                    font: {
+                        size: 20px;
+                    }
+                }
+                button {
+                    cursor: pointer;
+                    vertical-align: top;
+                    text-indent: -9999px;
+                    width: 98px; height: 64px;
+                    background: url(../img/search-button1.png);
+                }
+            }
+            .main-table {
+                @include margin ($mt:37px);
+                table {
+                    width: $width100;
+                    border: 1px solid $boderGray2;
+                    border-collapse: collapse;
+                    tr {
+                        text-align: left;
+                        height: 64px;
+                        &:first-child {
+                            background: #6c6b88;
+                            color: #fff;
+                            th {
+                                border: none;
+                            }
+                        }
+                        th {
+                            font: {
+                                size: 20px;
+                                weight: 400;
+                            }
+                            &:first-child {
+                                @include padding ($pl:43px);
+                                width: 195px;
+                            }
+                            &:nth-child(3) {
+                                width: 190px;
+                            }
+                            &:nth-child(4) {
+                                width: 120px;
+                            }
+                        }
+                        td {
+                            color: #777;
+                            border-left: 0;
+                            border-right: 0;
+                            &:first-child {
+                                @include padding ($pl:43px);
+                                width: 195px;
+                            }
+                            &:nth-child(3) {
+                                width: 190px;
+                            }
+                            &:nth-child(4) {
+                                width: 120px;
+                            }
+                            a {
+                                display: block;
+                                height: 64px; line-height: 64px;
+                            }
+                        }
+                    }
+                }
+                caption {
+                    display: none;
+                }
+            }
+            .number-bar {
+                ul {
+                    @include margin ($mt:68px,$mb:116px);
+                    @include flex (flex,center);
+                    justify-content: center;
+                    &:after {
+                        @include clearBoth();
+                    }
+                    li {
+                        @include margin ($mr:11px);
+                        float: left;
+                        a {
+                            text-align: center;
+                            line-height: 33px;
+                            width: 33px; height: 33px;
+                            display: block;
+                            color: $mainTextColor;
+                            font: {
+                                size: 18px;
+                                weight: 400;
+                            }
+                            &.on {
+                                background: $mainButtonColor; border-radius: 33px;
+                                color: #fff;
+                                font: {
+                                    weight: 700;
+                                }
+                            }
+                        }
+                        &:last-child {
+                            @include margin ($mr:0);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

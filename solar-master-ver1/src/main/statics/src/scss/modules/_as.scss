@@ -1,0 +1,103 @@
+.section {
+    &.as-content-wrap {
+        ::placeholder {
+            color: $boderGray2;
+            font: {
+                size: 20px;
+                weight: 300;
+            }
+        }
+        .section-content {
+            h3 {
+                @include padding ($pb:32px);
+                color: $mainTextColor3;
+                font: {
+                    size: 28px;
+                }
+            }
+            form {
+                @include position (relative);
+                h4 {
+                    @include padding ($pt:30px,$pb:27px);
+                    color: $mainTextColor;
+                    font: {
+                        size: 21px;
+                    }
+                    span {
+                        color: #ff671f;
+                    }
+                    &:nth-of-type(1) {
+                        @include padding ($pt:0px);
+                    }
+                }
+                textarea {
+                    border: 1px solid $boderGray2;
+                    @include padding ($pt:15px,$pl:15px);
+                    font: {
+                        size: 20px;
+                        weight: 400;
+                    }
+                    width: 1200px; height: 236px;
+                }
+                >input {
+                    border: 1px solid $boderGray2;
+                    width: 1200px; height: 64px;
+                    @include padding ($pl:15px);
+                    font: {
+                        size: 20px;
+                        weight: 400;
+                    }
+                }
+                .calendar {
+                    @include position(absolute,$r:21px,$b:188px);
+                    cursor: pointer;
+                    width: 21px; height: 21px;
+                    background: url(../img/calendar.png) no-repeat;
+                    border: 0;
+                }
+                .button-wrap {
+                    width: 1200px;
+                    @include margin ($mt:92px,$mb:130px);
+                    input {
+                        cursor: pointer;
+                        border: none;
+                        color: $whiteColor; background: $mainButtonColor;
+                        width: 574px; height: 74px;
+                        font: {
+                            size: 22px;
+                            weight: 500;
+                        }
+                        &.complete {
+                            float: right;
+                        }
+                        &.cancel {
+                            background: $whiteColor; border: 1px solid $mainButtonColor;
+                            color: $mainButtonColor;
+                        }
+                    }
+                }
+                select {
+                    width: 1200px; height: 64px;
+                    @include padding ($pl:19px,$pr:19px);
+                    border: 1px solid $boderGray2;
+                    &::-ms-expand {
+                        display: none;
+                    }
+                    -webkit-appearance: none;
+                    background: url(../img/arrow.png) 1160px 28px no-repeat;
+                    color: $boderGray2;
+                    font: {
+                        size: 20px;
+                        weight: 300;
+                    }
+                    option {
+                        color: $mainTextColor;
+                        font: {
+                            weight: 500;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

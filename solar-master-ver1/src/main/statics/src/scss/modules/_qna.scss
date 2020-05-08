@@ -1,0 +1,113 @@
+.section {
+    &.qna-content-wrap {
+        .section-content {
+            .tabs {
+                ul {
+                    &.tabs-nav {
+                        &:after {
+                            @include clearBoth();
+                        }
+                        width: $width100;
+                        li {
+                            width: 200px;
+                            float: left;
+                            border-right: 1px solid #dbdbdb;
+                            a {
+                                text-align: center;
+                                line-height: 80px;
+                                background: #f1f1f1;
+                                display: block;
+                                height: 80px;
+                                color: $mainTextColor5;
+                                font: {
+                                    size: 25px;
+                                    weight: 300;
+                                }
+                                &.on {
+                                    border: none;
+                                    background: #485574;
+                                    color: $whiteColor;
+                                    font: {
+                                        weight: 500;
+                                    }
+                                }
+                            }
+                            &:last-child {
+                                border-right: none;
+                            }
+                        }
+                    }
+                    &.tabs-content {
+                        @include margin ($mt:68px,$mb:180px);
+                        >li {
+                            width: 100%;
+                            ul {
+                                @include position (relative);
+                            }
+                            ul > li:first-child {
+                                @include padding ($pl:85px);
+                                @include position (relative);
+                                line-height: 90px;
+                                height: 90px;
+                                cursor: pointer;
+                                border: 1px solid $boderGray2;
+                                border-bottom: 0;
+                                color: $mainTextColor4;
+                                font: {
+                                    size: 22px;
+                                    weight: 600;
+                                }
+                                .arrow-bottom {
+                                    @include position (absolute,$t:40px,$r:29px);
+                                }
+                                .qna-q {
+                                    @include position (absolute,$t:26px,$l:29px);
+                                }
+                            }
+                            ul > li:last-child {
+                                display: none;
+                                @include padding ($pt:42px,$pb:42px,$pl:85px,$pr:30px);
+                                background: #fafafa;
+                                border: 1px solid $boderGray2;
+                                border-top: 0;
+                                color: $mainTextColor2;
+                                line-height: 32px;
+                                font: {
+                                    size: 20px;
+                                    weight: 500;
+                                }
+                                img {
+                                    @include position (absolute,$t:133px,$l:29px);
+                                }
+                            }
+                            &:last-child {
+                                ul > li:first-child {
+                                    border-bottom: 1px solid $boderGray2;
+                                }
+                            }
+                            &.on {
+                                @include margin ($mt:16px,$mb:16px);
+                                ul > li:first-child {
+                                    background: #6c6b88;
+                                    color: $whiteColor;
+                                }
+                                ul > li:last-child {
+                                    display: block;
+                                }
+                                &:first-child {
+                                    @include margin ($mt:0px,$mb:16px);
+                                }
+                                &:last-child {
+                                    @include margin ($mt:16px,$mb:0px);
+                                }
+                            }
+                            &.border-show {
+                                border-bottom: 1px solid $boderGray2;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

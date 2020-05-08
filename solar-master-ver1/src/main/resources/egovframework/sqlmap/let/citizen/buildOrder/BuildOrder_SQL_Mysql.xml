@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="buildOrder">
+
+    <typeAlias  alias="egovMap" type="egovframework.rte.psl.dataaccess.util.EgovMap"/>
+    <typeAlias  alias="buildOrderVO" type = "egovframework.let.citizen.service.BuildOrderVO"/>
+    
+    <resultMap id="findBuildOrder" class="egovframework.let.citizen.service.BuildOrderVO">
+        <result property="id" column="id" columnIndex="1"/>
+        <result property="name" column="name" columnIndex="2"/>
+        <result property="userEmail" column="userEmail" columnIndex="3"/>
+        <result property="userBirth" column="userBirth" columnIndex="4"/>
+        <result property="reqTarget" column="reqTarget" columnIndex="5"/>
+       <result property="buildingName" column="buildingName" columnIndex="6"/>
+        <result property="reqType" column="reqType" columnIndex="7"/>
+        <result property="host" column="host" columnIndex="8"/>
+        <result property="hostRelation" column="hostRelation" columnIndex="9"/>
+        <result property="hostInstallAgree" column="hostInstallAgree" columnIndex="10"/>
+        <result property="buildCompanyId" column="buildCompanyId" columnIndex="11"/>
+        <result property="installDate" column="installDate" columnIndex="12"/>
+        <result property="etc" column="etc" columnIndex="13"/>
+        <result property="aptType" column="aptType" columnIndex="14"/>
+        <result property="addr3" column="addr3" columnIndex="15"/>
+        <result property="addr5" column="addr5" columnIndex="16"/>
+        <result property="addrFull" column="addrFull" columnIndex="17"/>
+        <result property="stateType" column="stateType" columnIndex="18"/>
+        <result property="installStatus" column="installStatus" columnIndex="19"/>
+        <result property="companyName" column="companyName" columnIndex="20"/>
+    	<result property="paymentCheck" column="paymentCheck" columnIndex="21"/> 
+        <result property="payment" column="payment" columnIndex="22"/>
+        <result property="priceSi" column="priceSi" columnIndex="23"/>
+        <result property="priceBorough" column="priceBorough" columnIndex="24"/>
+        <result property="engineerName" column="engineerName" columnIndex="25"/>
+        <result property="engineerPhone" column="engineerPhone" columnIndex="26"/>
+        <result property="paymentReal" column="paymentReal" columnIndex="27"/>
+        <result property="productsProvided" column="productsProvided" columnIndex="28"/>
+        <result property="newAddr" column="newAddr"></result>
+        <result property="installDueDate" column="installDueDate"></result>
+        <result property="fileName" column="fileName"></result>
+</resultMap>
+    
+     <resultMap id="buildOrderId" class="egovframework.let.citizen.service.BuildOrderVO">
+        <result property="id" column="id" columnIndex="1"/>
+        <result property="name" column="name" columnIndex="2"/>
+        <result property="userEmail" column="userEmail" columnIndex="3"/>
+        <result property="userBirth" column="userBirth" columnIndex="4"/>
+        <result property="reqTarget" column="reqTarget" columnIndex="5"/>
+       <result property="buildingName" column="buildingName" columnIndex="6"/>
+        <result property="reqType" column="reqType" columnIndex="7"/>
+        <result property="host" column="host" columnIndex="8"/>
+        <result property="hostRelation" column="hostRelation" columnIndex="9"/>
+        <result property="hostInstallAgree" column="hostInstallAgree" columnIndex="10"/>
+        <result property="buildCompanyId" column="buildCompanyId" columnIndex="11"/>
+        <result property="installDate" column="installDate" columnIndex="12"/>
+        <result property="etc" column="etc" columnIndex="13"/>
+        <result property="aptType" column="aptType" columnIndex="14"/>
+        <result property="addr3" column="addr3" columnIndex="15"/>
+        <result property="addr5" column="addr5" columnIndex="16"/>
+        <result property="addrFull" column="addrFull" columnIndex="17"/>
+        <result property="stateType" column="stateType" columnIndex="18"/>
+        <result property="installStatus" column="installStatus" columnIndex="19"/>
+        <result property="companyName" column="companyName" columnIndex="20"/>
+    	<result property="paymentCheck" column="paymentCheck" columnIndex="21"/> 
+        <result property="payment" column="payment" columnIndex="22"/>
+        <result property="priceSi" column="priceSi" columnIndex="23"/>
+        <result property="priceBorough" column="priceBorough" columnIndex="24"/>
+        <result property="engineerName" column="engineerName" columnIndex="25"/>
+        <result property="engineerPhone" column="engineerPhone" columnIndex="26"/>
+        <result property="paymentReal" column="paymentReal" columnIndex="27"/>
+        <result property="productsProvided" column="productsProvided" columnIndex="28"/>
+         <result property="userPhone" column="userPhone" columnIndex="29"/>
+        <result property="newAddr" column="newAddr"></result>
+        <result property="installDueDate" column="installDueDate"></result>
+        <result property="fileName" column="fileName"></result>
+    </resultMap>
+    
+    
+     <select id="buildOrderDAO.findById"   resultMap="buildOrderId">
+        <![CDATA[
+		SELECT      bo.id                  as id,
+			        bo.user_name           as name,
+                    bo.user_email          as userEmail ,
+                    bo.user_birth          as userBirth ,
+                    bo.req_target          as reqTarget,
+                    bo.req_type 		   as reqType	,
+                    bo.build_company_id    as buildCompanyId,
+                    bo.install_date	       as installDate,
+                    bo.etc                 as etc,
+                    bo.addr_full		   as addrFull,
+                    bo.apt_type		       as aptType,
+                    bo.addr3			   as addr3,
+                    bo.addr5			   as addr5,
+                    bo.building_name       as buildingName,
+                    bo.host_install_agree  as hostInstallAgree,
+                    bo.host_relation       as hostRelation,
+                    bo.host			       as host,
+                    bo.state_type          as stateType,
+                    bo.install_complete    as installStatus,
+                    bo.payment_real        as  paymentReal,
+                    bo.payment             as  payment,
+                    bo.price_si            as  priceSi,
+                    bo.price_borough       as  priceBorough,
+                    bo.payment_check       as  paymentCheck,
+                    bc.name                as companyName,
+                    us.name                as engineerName,
+                    us.contact             as engineerPhone,
+					dp.name                as productsProvided,
+					bo.user_phone		   as userPhone,
+					bo.new_addr			   as newAddr,
+					bo.install_due_date	   as installDueDate,
+					bo.file_name           as fileName
+			  FROM        build_order bo
+              LEFT JOIN  build_company bc         ON bo.build_company_id  = bc.id
+              LEFT JOIN  citizen_user cu          ON bo.user_phone        = cu.user_id
+              LEFT JOIN   users us                ON bo.engineer_id       = us.id
+              LEFT JOIN   def_product dp          ON dp.build_company_id  = bo.build_company_id AND dp.id =bo.def_product_id
+			  WHERE       bo.id= #id# 
+			  AND bo.deleted_at IS NULL
+		 ]]>
+    </select>
+    
+      <select id="buildOrderDAO.findByUserId"   resultMap="findBuildOrder">
+        <![CDATA[
+		SELECT      bo.id                  as id,
+			        bo.user_name           as name,
+                    bo.user_email          as userEmail ,
+                    bo.user_birth          as userBirth ,
+                    bo.req_target          as reqTarget,
+                    bo.req_type 		   as reqType	,
+                    bo.build_company_id    as buildCompanyId,
+                    bo.install_date	       as installDate,
+                    bo.etc                 as etc,
+                    bo.addr_full		   as addrFull,
+                    bo.apt_type		       as aptType,
+                    bo.addr3			   as addr3,
+                    bo.addr5			   as addr5,
+                    bo.building_name       as buildingName,
+                    bo.host_install_agree  as hostInstallAgree,
+                    bo.host_relation       as hostRelation,
+                    bo.host			       as host,
+                    bo.state_type          as stateType,
+                    bo.install_complete    as installStatus,
+                    bo.payment_real        as  paymentReal,
+                    bo.payment             as  payment,
+                    bo.price_si            as  priceSi,
+                    bo.price_borough       as  priceBorough,
+                    bo.payment_check       as  paymentCheck,
+                    bc.name                as companyName,
+                    us.name                as engineerName,
+                    us.contact             as engineerPhone,
+					dp.name                as productsProvided,
+					bo.new_addr			   as newAddr,
+					bo.install_due_date	   as installDueDate,
+					bo.file_name           as fileName
+					
+			  FROM        build_order bo
+              INNER JOIN  build_company bc         ON bo.build_company_id  = bc.id
+              INNER JOIN  citizen_user cu          ON bo.user_phone        = cu.user_id
+              LEFT JOIN   users us                 ON bo.engineer_id       = us.id
+              LEFT JOIN   def_product dp           ON dp.build_company_id  = bo.build_company_id AND dp.id =bo.def_product_id
+			  WHERE       cu.user_id= #uid#
+			  AND bo.deleted_at IS NULL
+			  ORDER BY bo.id DESC
+		 ]]>
+    </select>
+    
+	<insert id="buildOrderDAO.insert" parameterClass="buildOrderVO">
+        <![CDATA[
+            INSERT INTO build_order 
+                	(user_name,
+                    user_email,
+                    user_birth,
+                    req_target,
+                    req_type,
+                    build_company_id,
+                    install_date,
+                    etc,
+                    addr_full,
+                    post_code,
+                    apt_type,
+                    addr1,
+                    addr2,
+                    addr3,
+                    addr4,
+                    addr5,
+                    building_name,
+                    host_install_agree,
+                    host_relation,
+                    host,
+                    write_user_id,
+                    write_user_type,
+                    user_phone,
+                    new_addr,
+                    created_at, 
+                    updated_at
+            )
+            VALUES (
+                    #name#,
+                    #userEmail#,
+                    #userBirth#,
+                    #reqTarget#,
+                    #reqType#,
+                    #buildCompanyId#,
+                    #installDate#,
+                    #etc#,
+                    #addrFull#,
+                    #postCode#,
+                    #aptType#,
+                    #addr1#,
+                    #addr2#,
+                    #addr3#,
+                    #addr4#,
+                    #addr5#,
+                    #buildingName#,
+                    #hostInstallAgree#,
+                    #hostRelation#,
+                   	#host#,
+                   	#writeUserId#,
+                   	#writeUserType#,
+                   	#userPhone#,
+                   	#newAddr#,
+                   	NOW(), 
+                   	NOW()
+           )
+        ]]>
+        <selectKey resultClass="int" keyProperty="id">
+          	SELECT @@IDENTITY AS id
+      	</selectKey>
+    </insert>
+    
+     <select id="buildOrderDAO.checkExistBuildOrder" parameterClass="java.lang.String" resultClass="java.lang.Integer">
+        <![CDATA[
+			SELECT COUNT(1) AS totalBuildOrder
+			  FROM build_order
+			  WHERE user_phone= #uid#
+			  AND build_order.deleted_at IS NULL
+		 ]]>
+    </select>
+	
+</sqlMap>

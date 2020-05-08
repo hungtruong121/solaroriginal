@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="as">
+
+    <typeAlias  alias="egovMap" type="egovframework.rte.psl.dataaccess.util.EgovMap"/>
+    <typeAlias  alias="registerAsVO" type = "egovframework.let.citizen.service.RegisterAsVO"/>
+    <typeAlias alias="buildAsVO"
+		type="egovframework.let.citizen.service.BuildAsVO" />
+	<resultMap id="buildAs" class="egovframework.let.citizen.service.BuildAsVO">
+		<result property="buildOrderAsId" column="buildOrderAsId"></result>
+		<result property="companyId" column="companyId"></result>
+		<result property="companyName" column="companyName"></result>
+		<result property="isComplate" column="isComplate"></result>
+		<result property="asDate" column="asDate"></result>
+		<result property="etc" column="etc"></result>
+		<result property="userContact" column="userContact"></result>
+		<result property="userName" column="userName"></result>
+		<result property="userId" column="userId"></result>
+		<result property="state" column="state"></result>
+		<result property="newAddr" column="newAddr"></result>
+		<result property="buildingName" column="buildingName"></result>
+		<result property="addr4" column="addr4"></result>
+		<result property="addr5" column="addr5"></result>
+</resultMap>
+
+	<select id="asDao.findByUserId" resultMap="buildAs">
+<![CDATA[
+		SELECT 	build_as.id AS buildOrderAsId,
+				build_order.new_addr AS newAddr,
+			    build_order.building_name AS buildingName, 
+			    build_order.addr4 , 
+			    build_order.addr5,
+				build_company.id AS companyId,
+				build_company.name AS companyName,
+				build_as.isComplate AS isComplate,
+				build_as.as_date AS asDate,
+				build_as.etc AS etc,
+				users.contact AS userContact,
+				users.name AS userName,
+				users.id AS userId,
+				build_as.state AS state
+				FROM build_as 
+				INNER JOIN build_order
+					ON build_as.build_order_id = build_order.id
+				LEFT JOIN build_company
+					ON build_as.build_company_id = build_company.id
+				LEFT JOIN users
+					ON  build_as.engineer_id  = users.id				
+				WHERE  build_order.user_phone = #uid# 
+				AND build_as.deleted_at IS NULL
+				ORDER BY build_as.id DESC
+		 ]]>
+</select>
+
+<select id="asDao.findByUserIdAndBuildOrderId" resultMap="buildAs">
+<![CDATA[
+		SELECT 	build_as.id buildOrderAsId ,
+				build_order.new_addr AS newAddr,
+			    build_order.building_name AS buildingName, 
+			    build_order.addr4 , 
+			    build_order.addr5,
+				build_company.id AS companyId,
+				build_company.name AS companyName,
+				build_as.isComplate AS isComplate,
+				build_as.as_date AS asDate,
+				build_as.etc AS etc,
+				users.contact AS userContact,
+				users.name AS userName,
+				users.id AS userId,
+				build_as.state AS state
+				FROM build_as 
+				INNER JOIN build_order
+					ON build_as.build_order_id = build_order.id
+				LEFT JOIN build_company
+					ON build_as.build_company_id = build_company.id
+				LEFT JOIN users
+					ON  build_as.engineer_id  = users.id				
+				WHERE build_as.users_id = #userId# 
+				AND build_as.deleted_at IS NULL
+				AND build_as.id = #buildOrderAsId#
+		 ]]>
+</select>
+
+	<insert id="asDao.insertAs" parameterClass="registerAsVO">
+<![CDATA[
+            INSERT INTO build_as 
+                	(etc,
+                    as_date,
+                    build_company_id,
+                    users_id,
+                    created_at,
+                    updated_at,
+                    state,
+                    build_order_id
+                    )
+            VALUES (
+                    #etc#,
+                    #asDate#,
+                    #buildCompanyId#,
+                    #usersId#,
+                    NOW(),
+                    NOW(),
+                    '1',
+                    #buildOrderId#
+           			)
+        ]]>
+		<selectKey resultClass="int" keyProperty="id">
+			SELECT @@IDENTITY AS id
+		</selectKey>
+</insert>
+</sqlMap>

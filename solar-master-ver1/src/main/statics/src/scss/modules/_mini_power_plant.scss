@@ -1,0 +1,355 @@
+.section {
+    &.about-content-wrap {
+        .section-content {
+            @include border-bottom;
+            @include padding ($pb:80px);
+            &:after {
+                @include clearBoth();
+            }
+            div {
+                float: left;
+                @include margin ($mr:66px);
+                width: 565px; height: 510px;
+                h3 {
+                    @include padding($pt:333px);
+                    color: $subTextColor;
+                    font: {
+                        size: 30px;
+                    }
+                }
+                p {
+                    @include padding ($pt:20px);
+                    color: $mainTextColor2;
+                    line-height: 30px;
+                    font: {
+                        size: 18px;
+                    }
+                }
+                img {
+                    @include padding ($pt:20px);
+                }
+                &:nth-child(1) {
+                    background: url('../img/mini-1-1.png') no-repeat;
+                }
+                &:nth-child(2) {
+                    background: url('../img/mini-1-2.png') no-repeat;
+                    @include margin ($mr:0);
+                }
+            }
+        }
+    }
+    &.intro-content-wrap {
+        margin: 0 auto;
+        width: 1200px;
+        @include border-bottom;
+        @include padding ($pb:80px);
+        >p {
+            @include margin ($mt:49px);
+            text-align: center;
+            color: #b3b6c3;
+            line-height: 25px;
+            font: {
+                size: 18px;
+            }
+        }
+        .section-content {
+            div {
+                display: inline-block;
+                @include margin ($mr:98px);
+                width: 332px; height: 503px;
+                border: 1px solid #c4c3d5;
+                text-align: center;
+                border-radius: 10px;
+                h3 {
+                    @include padding ($pt:335px);
+                    color: #111111;
+                    font: {
+                        size: 30px;
+                        weight: 500;
+                    }
+                }
+                p {
+                    color: $subTextColor;
+                    line-height: 35px;
+                    font: {
+                        size: 23px;
+                    }
+                }
+                &:nth-child(1) {
+                    background: url('../img/mini-2-1.png') center 49px no-repeat;
+                }
+                &:nth-child(2) {
+                    background: url('../img/mini-2-2.png') center 90px no-repeat;
+                }
+                &:nth-child(3) {
+                    background: url('../img/mini-2-3.png') center 28px no-repeat;
+                    @include margin ($mr:0px);
+                }
+            }
+        }
+    }
+    &.type-content-wrap {
+        .section-content {
+            @include border-bottom;
+            @include padding ($pb:80px);
+            .type-icon {
+                text-align: center;
+                h3 {
+                    font: {
+                        size: 30px;
+                    }
+                }
+                p {
+                    @include padding ($pt:262px);
+                    color: $boderGray2;
+                    line-height: 28px;
+                    font: {
+                        size: 18px;
+                    }
+                    strong {
+                        line-height: 60px;
+                        color: $mainTextColor5;
+                        font: {
+                            size: 24px;
+                        }
+                    }
+                }
+                div {
+                    display: inline-block;
+                    @include margin ($mr:131px);
+                    width: 310px;
+                    &:nth-child(1) {
+                        background: url('../img/mini-3-1.png') center 60px no-repeat;
+                        h3 {
+                            color: #ff671f;
+                        }
+                    }
+                    &:nth-child(2) {
+                        background: url('../img/mini-3-2.png') center 60px no-repeat;
+                        h3 {
+                            color: #ffcd1f;
+                        }
+                    }
+                    &:nth-child(3) {
+                        @include margin ($mr:0px);
+                        background: url('../img/mini-3-3.png') center 60px no-repeat;
+                        h3 {
+                            color: #adcb00;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.effect1-content-wrap {
+        .section-content {
+            @include border-bottom;
+            @include padding ($pb:80px);
+            h3 {
+                @include margin ($mb:27px);
+                color: $mainTextColor3;
+                font: {
+                    size: 28px;
+                    weight: 500;
+                }
+            }
+            .text {
+                >p {
+                    line-height: 30px;
+                    color: $boderGray2;
+                    font: {
+                        size: 18px;
+                        weight: 300;
+                    }
+                    span {
+                        color: $mainTextColor5;
+                        font: {
+                            size: 21px;
+                            weight: 400;
+                        }
+                    }
+                }
+            }
+            .effect-icon {
+                @include margin ($mt:30px,$mb:30px);
+                div {
+                    display: inline-block;
+                    @include margin ($mr:176px);
+                    @include position (relative);
+                    width: 280px; height: 111px;
+                    &:nth-child(1) {
+                        background: url('../img/mini-4-1.png') left center no-repeat;
+                    }
+                    &:nth-child(2) {
+                        background: url('../img/mini-4-2.png') left center no-repeat;
+                    }
+                    &:nth-child(3) {
+                        background: url('../img/mini-4-3.png') left center no-repeat;
+                        @include margin ($mr:0px);
+                    }
+                    p {
+                        @include position (absolute,$t:21px,$r:0);
+                        color: $mainTextColor5;
+                        font: {
+                            size: 21px;
+                            weight: 400;
+                        }
+                        strong {
+                            color: #6c6b88;
+                            font: {
+                                size: 28px;
+                            }
+                        }
+                    }
+                }
+            }
+            .text-box {
+                @include padding ($pt:45px,$pl:45px);
+                @include margin ($mb:88px);
+                border-radius: 10px;
+                border: 1px solid #c2c3c9;
+                width: $width100; height: 163px;
+                p {
+                    color: $mainTextColor5;
+                    line-height: 35px;
+                    font: {
+                        size: 22px;
+                        weight: 400;
+                    }
+                    strong {
+                        color: $mainTextColor;
+                        font: {
+                            size: 24px;
+                        }
+                    }
+                }
+            }
+            .effect-radius-wrap {
+                .effect-radius-content {
+                    div {
+                        display: inline-block;
+                    }
+                    text-align: center;
+                    h4 {
+                        color: $whiteColor;
+                        line-height: 68px;
+                        font: {
+                            size: 24px;
+                        }
+                    }
+                    p {
+                        font: {
+                            size: 22px;
+                        }
+                        strong {
+                            font: {
+                                size: 33px;
+                            }
+                        }
+                    }
+                    .item1,.item3 {
+                        overflow: hidden;
+                        border-radius: 10px;
+                        border: 1px solid #b2b2b6;
+                        width: 275px; height: 242px;
+                        p {
+                            @include padding ($pt:26px);
+                        }
+                    }
+                    .item1 {
+                        background: #f5f5f5;
+                        h4 {
+                            height: 68px;
+                            background: #b2b2b6;
+                        }
+                        p {
+                            color: $mainTextColor5;
+                        }
+                    }
+                    .item2 {
+                        width: 85px; height: 242px;
+                        background: url('../img/mini-4-arrow.png') no-repeat;
+                        background-position: center;
+                    }
+                    .item3 {
+                        background: #eff2fa;
+                        h4 {
+                            height: 68px;
+                            background: $mainButtonColor;
+                        }
+                        p {
+                            color: $mainButtonColor;
+                        }
+                    }
+                    .item4,.item5 {
+                        overflow: hidden;
+                        border-radius: 10px;
+                        width: 247px; height: 242px;
+                        p {
+                            @include padding ($pt:108px);
+                            color: $whiteColor;
+                            font: {
+                                weight: 300;
+                            }
+                        }
+                    }
+                    .item4 {
+                        background: #6c6b88 url('../img/mini-4-4.png') center 51px no-repeat;
+                        @include margin ($ml:51px);
+                    }
+                    .item5 {
+                        background: #6c6b88 url('../img/mini-4-5.png') center 27px no-repeat;
+                        @include margin ($ml:5px);
+                    }
+                }
+            }
+        }
+    }
+    &.effect2-content-wrap {
+        .section-content {
+            @include padding ($pb:147px);
+            border-bottom: none;
+            text-align: center;
+            .effect-iconBox {
+                p {
+                    @include padding ($pt:309px);
+                    strong {
+                        color: $mainTextColor3;
+                        font: {
+                            size: 30px;
+                        }
+                    }
+                    &:nth-child(1) {
+                        color: $mainTextColor5;
+                        line-height: 35px;
+                        font: {
+                            size: 25px;
+                        }
+                    }
+                    &:nth-child(2) {
+                        @include padding ($pt:15px);
+                        color: $mainTextColor5;
+                        font: {
+                            size: 18px;
+                            weight: 300;
+                        }
+                    }
+                }
+                div {
+                    width: 580px; height: 487px;
+                    border: 1px solid #b2b2b6;
+                    border-radius: 10px;
+                    display: inline-block;
+                    @include margin ($mr:36px);
+                    &:nth-child(1) {
+                        background: url('../img/mini-5-1.png') center 65px no-repeat;
+                    }
+                    &:nth-child(2) {
+                        background: url('../img/mini-5-2.png') center 53px no-repeat;
+                        @include margin ($mr:0px);
+                    }
+                }
+            }
+        }
+    }
+}

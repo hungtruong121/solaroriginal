@@ -1,0 +1,694 @@
+@@include('modules/sub_header.html', {"title": "Home", "class": ""})
+
+<div class="content-body">
+    <div class="sub-content-head-wrap sub-content3">
+        @@include('modules/sub_content_head.html')
+        <div class="sub-navigation-wrap">
+            <div class="sub-navigation">
+                <div class="dropdown">
+                    <button class="dropdown-button">
+                        <span>설치안내</span>
+                        <img src="./img/ico_small_next.png" alt="small_next">
+                    </button>
+                    <div class="dropdown-menu">
+                        <ul>
+                           <li><a href="about_us.html">태양광 지원 센터</a></li>
+                            <li><a href="mini_power_plant.html">태양광 미니 발전소</a></li>
+                            <li><a href="service.html">설치 안내</a></li>
+                            <li class="alert-pop"><a href="install_apply.html">온라인 신청</a></li>
+                            <li><a href="notice.html">게시판</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="dropdown-button">
+                        <span>보조금 정보</span>
+                        <img src="./img/ico_small_next.png" alt="small_next">
+                    </button>
+                    <div class="dropdown-menu">
+                        <ul>
+                            <li><a href="check_list.html">사전 확인 사항</a></li>
+                            <li><a href="company_info.html">보급업체정보</a></li>
+                            <li><a href="product_info.html">상품정보</a></li>
+                            <li><a href="fund.html">보조금 정보</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section fund-content-wrap">
+        <div class="section-content fund-content">
+            <button class="top-button">up</button>
+            <div class="sub-title-wrap">
+                <h2 class="content-title">베란다형 태양광 미니발전소</h2>
+                <span class="black-bar"></span>
+            </div>
+            <div class="top-table-wrap">
+                <div class="radius-box">
+                    <p>서울시 보조금 현황</p>
+                </div>
+                <p>
+                    <strong>1. 지원대상</strong>
+                    <br>서울시 소재 건물에 베란다형 태양광 미니발전소 설치를 원하는 시민(베란다형은 세입자도 가능)
+                    <br>
+                    <br>
+                    <strong>2. 사업규모: 총 222억 15백만원</strong>
+                    <br>
+                    <br>
+                    <strong>3. 지원기간 : 업체 선정 공고일 ~ 2019.11.30. (선착순 접수, 예산소진 시 종료)</strong>
+                    <br>
+                    <br>
+                    <strong>4. 지원기준: 1,390원/W  ※ 50W~1㎾ 미만까지 용량별 차등 지원</strong>
+                    <br>
+                    모듈 300W 1장 설치하는 경우 보조금 417천원(300W×1,390원) 지원<br>
+                    - 난간 거치형은 동일 가구에 모듈 1장만 지원<br>
+                    - 거주지 자치구별 예산 범위 내에서 자체 계획에 따른 추가 지원 있음<br>
+                    ※ 보조금은 시장 상황을 고려하여 2020년까지 매년 약 10%씩 하향 예정
+                </p>
+                <!--
+                <table border="1" sumary="fund" frame="void">
+                    <caption>지원기준</caption>
+                    <tr>
+                        <th>구분</th>
+                        <th>500W 이하</th>
+                        <th>500W 초과 1kW 미만</th>
+                    </tr>
+                    <tr>
+                        <td>지원액</td>
+                        <td>1,400원/W</td>
+                        <td>600원/W</td>
+                    </tr>
+                </table>
+                <ul>
+                    <li>・동일가구에서 추가설치 시 기설치된 용량을 누적하여 지원</li>
+                    <li>・베란다형은 아파트는 물론 단독주택, 상가건물 등에도 가능함</li>
+                    <li>・보조금은 시장상황을 고려하여 ’20년까지 매년 약 10%씩 하향 조정 검토</li>
+                    <li>・주택형, 건물형은 추후 별도 공고</li>
+                </ul>
+                -->
+            </div>
+            <div class="bottom-table-wrap">
+                <div class="radius-box">
+                    <p>자치구 보조금 현황</p>
+                </div>
+                <table border="1" sumary="fund" frame="void">
+                    <caption>단위 (천원)</caption> <!-- 2019-06-05 -->
+                    <tr>
+                        <th rowspan="2">지역</th>
+                        <th rowspan="2">설치유형</th>
+                        <th colspan="4">2019년도 보조금 및 가구</th>
+                    </tr>
+                    <tr>
+                        <th>지원형태</th>
+                        <th>전체 보조금</th>
+                        <th>가구(개소) 수</th>
+                        <th>비고</th>
+                    </tr>
+                    <tr>
+                        <td>노원구</td>
+                        <td>베란다형</td>
+                        <td>50/가구</td>
+                        <td>100,000</td>
+                        <td>2,000</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>중랑구</td>
+                        <td>베란다형</td>
+                        <td>50/가구</td>
+                        <td>50,000</td>
+                        <td>1,000</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>동대문구</td>
+                        <td>베란다형</td>
+                        <td>50/가구</td>
+                        <td>150,000</td>
+                        <td>3,000</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>성동구</td>
+                        <td>베란다형</td>
+                        <td>50/가구</td>
+                        <td>44,000</td>
+                        <td>880</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>광진구</td>
+                        <td>베란다형</td>
+                        <td>50/가구</td>
+                        <td>150,000</td>
+                        <td>600</td> <!-- 2019-06-05 -->
+                        <td>-</td> <!-- 2019-06-05 -->
+                    </tr>
+                    <tr>
+                        <td>송파구</td>
+                        <td>베란다형</td>
+                        <td>50/가구</td>
+                        <td>30,000</td>
+                        <td>608</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>강남구</td>
+                        <td>베란다형</td>
+                        <td>50/가구</td>
+                        <td>50,000</td>
+                        <td>1,000</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>서초구</td>
+                        <td>베란다형</td>
+                        <td>50/가구</td>
+                        <td>50,000</td>
+                        <td>1,000</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>강동구</td>
+                        <td>베란다형</td>
+                        <td>50/가구</td>
+                        <td>44,000</td>
+                        <td>880</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>종로구</td>
+                        <td>베란다형</td>
+                        <td>50/가구</td>
+                        <td>10,000</td>
+                        <td>200</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>중구</td>
+                        <td>베란다형</td>
+                        <td>50/가구</td>
+                        <td>9,000</td>
+                        <td>180</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>용산구</td>
+                        <td>베란다형</td>
+                        <td>50/가구</td>
+                        <td>10,000</td>
+                        <td>200</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>성북구</td>
+                        <td>베란다형</td>
+                        <td>50/가구</td>
+                        <td>50,000</td>
+                        <td>1,000</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>은평구</td>
+                        <td>베란다형</td>
+                        <td>50/가구</td>
+                        <td>60,000</td>
+                        <td>1,200</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>서대문구</td>
+                        <td>베란다형</td>
+                        <td>50/가구</td>
+                        <td>65,000</td>
+                        <td>1,300</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>마포구</td>
+                        <td>베란다형</td>
+                        <td>50/가구</td>
+                        <td>58,000</td>
+                        <td>1,160</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>강북구</td>
+                        <td>베란다형</td>
+                        <td>50/가구</td>
+                        <td>37,000</td>
+                        <td>740</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>도봉구</td>
+                        <td>베란다형</td>
+                        <td>50/가구</td>
+                        <td>100,000</td>
+                        <td>2,000</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>동작구</td>
+                        <td>베란다형</td>
+                        <td>50/가구</td>
+                        <td>60,000</td>
+                        <td>1,200</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>양천구</td>
+                        <td>베란다형</td>
+                        <td>50/가구</td>
+                        <td>50,000</td>
+                        <td>1,000</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>강서구</td>
+                        <td>베란다형</td>
+                        <td>50/가구</td>
+                        <td>50,000</td>
+                        <td>1,000</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>구로구</td>
+                        <td>베란다형</td>
+                        <td>50/가구</td>
+                        <td>30,000</td>
+                        <td>600</td>
+                        <td>-</td> <!-- 2019-06-05 -->
+                    </tr>
+                    <tr>
+                        <td>금천구</td>
+                        <td>베란다형</td>
+                        <td>50/가구</td>
+                        <td>70,000</td>
+                        <td>1,400</td>
+                        <td>주택형 포함</td> <!-- 2019-06-05 -->
+                    </tr>
+                    <tr>
+                        <td>관악구</td>
+                        <td>베란다형</td>
+                        <td>50/가구</td>
+                        <td>50,000</td>
+                        <td>1,000</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>영등포구</td>
+                        <td>베란다형</td>
+                        <td>50/가구</td>
+                        <td>50,000</td>
+                        <td>1,000</td>
+                        <td>-</td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="3">합계</td>
+                        <td>1,427,400</td>
+                        <td>28,548</td>
+                        <td>-</td>
+                    </tr>
+                </table>
+                <!--
+                <ul>
+                    <li>・2019.11.30 이내 접수가능</li>
+                    <li>・선착순 지원으로 예산 소진 시 조기마감</li>
+                    <li>・주택형 태양광은 서울시 추후 공고</li>
+                    <li>・지원 제외 대상 등 상세 내역은 기초자치구 공고문 참조</li>
+                </ul>
+                -->
+            </div>
+
+            <div class="top-table-wrap">
+                <div class="sub-title-wrap"> <!-- 2019-06-05 -->
+                    <h2 class="content-title">주택·건물형 태양광 미니발전소</h2>
+                    <span class="black-bar"></span>
+                </div>
+                <div class="radius-box deep-color">
+                    <p>서울시 보조금 현황</p>
+                </div>
+                <table border="1" sumary="fund" frame="void">
+                    <caption>1. 지원대상 : 서울시 소재 주택·건물에 태양광 미니발전소 설치를 원하는 자</caption>
+                    <tr>
+                        <th>구분</th>
+                        <th>신청 자격</th>
+                    </tr>
+                    <tr>
+                        <td>단독·공동주택</td>
+                        <td>기존 또는 신축주택의 소유자, 입주자 대표</td>
+                    </tr>
+                    <tr>
+                        <td>건물</td>
+                        <td>서울시 소재 건물 소유자</td>
+                    </tr>
+                </table>
+                <p>
+                    <strong>2. 사업규모: 총 2,220만원</strong>
+                    <br>
+                    <br>
+                    <strong>3. 지원기간 : 공고일 ~ ’19. 11. 30.(선착순 접수, 예산소진 시 종료)</strong>
+                </p>
+                <table border="1" sumary="fund" frame="void">
+                    <caption>4. 지원기준</caption>
+                    <tr>
+                        <th colspan="2">구분</th>
+                        <th>지원단가</th>
+                        <th>비고</th>
+                    </tr>
+                    <tr>
+                        <td rowspan="3">주택형</td>
+                        <td>일반(1kW~3kW)</td>
+                        <td>600천원/kW</td>
+                        <td>총 사업비 상한제 : 560만원<br/>
+                            ‘19년도 자치구별 추가 지원</td>
+                    </tr>
+                    <tr>
+                        <td>단독주택 대여(3kW ~ 9kW)</td>
+                        <td>200천원/kW</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>공동주택 대여(3kW 이상)</td>
+                        <td>600천원/kW</td>
+                        <td>-</td>
+                    </tr>
+
+                    <tr>
+                        <td rowspan="2">건물형</td>
+                        <td>일반(3kW 이상)</td>
+                        <td>600천원/kW</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>서울시와 단체설치
+                            협약 체결시</td>
+                        <td>700천원/kW</td>
+                        <td>-</td>
+                    </tr>
+                </table>
+                <!--
+                <table border="1" sumary="fund" frame="void">
+                    <caption>지원기준</caption>
+                    <tr>
+                        <th>구분</th>
+                        <th>500W 이하</th>
+                        <th>500W 초과 1kW 미만</th>
+                    </tr>
+                    <tr>
+                        <td>지원액</td>
+                        <td>1,400원/W</td>
+                        <td>600원/W</td>
+                    </tr>
+                </table>
+                <ul>
+                    <li>・동일가구에서 추가설치 시 기설치된 용량을 누적하여 지원</li>
+                    <li>・베란다형은 아파트는 물론 단독주택, 상가건물 등에도 가능함</li>
+                    <li>・보조금은 시장상황을 고려하여 ’20년까지 매년 약 10%씩 하향 조정 검토</li>
+                    <li>・주택형, 건물형은 추후 별도 공고</li>
+                </ul>
+                -->
+            </div>
+            <div class="bottom-table-wrap">
+                <div class="radius-box deep-color">
+                    <p>자치구 보조금 현황</p>
+                </div>
+                <table border="1" sumary="fund" frame="void">
+                    <caption>지원금 내역</caption>
+                    <tr>
+                        <th rowspan="2">지역</th>
+                        <th rowspan="2">설치유형</th>
+                        <th colspan="4">2019년도 보조금 및 가구</th>
+                    </tr>
+                    <tr>
+                        <th>지원형태</th>
+                        <th>전체 보조금</th>
+                        <th>가구(개소) 수</th>
+                        <th>비고</th>
+                    </tr>
+                    <tr>
+                        <td>노원구</td>
+                        <td>주택형</td>
+                        <td>600/가구</td>
+                        <td>3,000</td>
+                        <td>5</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>중랑구</td>
+                        <td>주택형</td>
+                        <td>600/가구</td>
+                        <td>6,000</td>
+                        <td>10</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>동대문구</td>
+                        <td>주택·건물형</td>
+                        <td>200/kW</td>
+                        <td>10,000</td>
+                        <td>50kW</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>성동구</td>
+                        <td>주택형</td>
+                        <td>200/kW</td>
+                        <td>6,000</td>
+                        <td>10</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>광진구</td>
+                        <td>주택형</td>
+                        <td>1,000/가구</td>
+                        <td>150,000</td>
+                        <td>120</td> <!-- 2019-06-05 -->
+                        <td>-</td> <!-- 2019-06-05 -->
+                    </tr>
+                    <tr>
+                        <td>송파구</td>
+                        <td>주택형</td>
+                        <td>600/가구</td>
+                        <td>69,600</td>
+                        <td>116</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>강남구</td>
+                        <td>주택형</td>
+                        <td>1,000/가구</td>
+                        <td>50,000</td>
+                        <td>50</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>서초구</td>
+                        <td>주택형</td>
+                        <td>60/가구</td>
+                        <td>36,000</td>
+                        <td>60</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>강동구</td>
+                        <td>주택형</td>
+                        <td>600/가구</td>
+                        <td>60,000</td>
+                        <td>10</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>종로구</td>
+                        <td>주택형</td>
+                        <td>600/가구</td>
+                        <td>6,000</td>
+                        <td>10</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>중구</td>
+                        <td>주택형</td>
+                        <td>600/가구</td>
+                        <td>6,000</td>
+                        <td>10</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>용산구</td>
+                        <td>주택형</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>성북구</td>
+                        <td>주택형</td>
+                        <td>600/가구</td>
+                        <td>12,000</td>
+                        <td>20</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>은평구</td>
+                        <td>주택형</td>
+                        <td>600/가구</td>
+                        <td>12,000</td>
+                        <td>20</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>서대문구</td>
+                        <td>주택형</td>
+                        <td>1,000/3kW</td>
+                        <td>48,000</td>
+                        <td>48</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>마포구</td>
+                        <td>주택형</td>
+                        <td>600/가구</td>
+                        <td>12,000</td>
+                        <td>20</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>강북구</td>
+                        <td>주택형</td>
+                        <td>600/가구</td>
+                        <td>3,000</td>
+                        <td>5</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>도봉구</td>
+                        <td>주택형</td>
+                        <td>600/가구</td>
+                        <td>12,000</td>
+                        <td>20</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>동작구</td>
+                        <td>주택형</td>
+                        <td>1,000/가구</td>
+                        <td>40,000</td>
+                        <td>40</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>양천구</td>
+                        <td>주택형</td>
+                        <td>200/kW</td>
+                        <td>10,000</td>
+                        <td>17</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">강서구</td>
+                        <td>주택형</td>
+                        <td>500/가구</td>
+                        <td>10,000</td>
+                        <td>20</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>건강보호계층</td>
+                        <td>1,000/개소</td>
+                        <td>20,000</td>
+                        <td>20</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>구로구</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>금천구</td>
+                        <td>주택형</td>
+                        <td>200/kW</td>
+                        <td>70,000</td>
+                        <td>350kW</td>
+                        <td>베란다형 포함</td>
+                    </tr>
+                    <tr>
+                        <td>관악구</td>
+                        <td>주택형</td>
+                        <td>600/개소</td>
+                        <td>24,000</td>
+                        <td>40</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>영등포구</td>
+                        <td>주택형</td>
+                        <td>600/가구</td>
+                        <td>12,000</td>
+                        <td>20</td>
+                        <td>-</td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="3">합계</td>
+                        <td>687,600</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                </table>
+                <!--
+                <ul>
+                    <li>・2019.11.30 이내 접수가능</li>
+                    <li>・선착순 지원으로 예산 소진 시 조기마감</li>
+                    <li>・주택형 태양광은 서울시 추후 공고</li>
+                    <li>・지원 제외 대상 등 상세 내역은 기초자치구 공고문 참조</li>
+                </ul>
+                -->
+            </div>
+        </div>
+    </div>
+</div>
+
+@@include('modules/footer.html')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

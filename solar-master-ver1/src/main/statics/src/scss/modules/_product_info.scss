@@ -1,0 +1,91 @@
+.section {
+    &.product-content-wrap {
+        .section-content {
+            @include margin ($mt:84px,$mb:180px);
+            .product-title {
+                @include margin ($mb:17px);
+                ::placeholder {
+                    font: {
+                        size: 18px;
+                        weight: 300;
+                    }
+                }
+                .title-button {
+                    @include margin ($mt:37px);
+                    float: right;
+                    img {
+                        @include margin ($mr:4px,$mb:-3px);
+                    }
+                    button {
+                        @include margin ($ml:8px);
+                        cursor: pointer;
+                        width: 123px; height: 45px; border-radius: 5px;
+                        color: $whiteColor;
+                        line-height: 45px;
+                        background: #b2b2b6;
+                        font: {
+                            size: 16px;
+                            weight: 500;
+                        }
+                        &:focus,&:hover {
+                            background: #485574;
+                        }
+                    }
+                }
+                input[type="search"] {
+                    @include padding ($pl:19px);
+                    -webkit-appearance: none;
+                    color: #444;
+                    width: 1080px; height: 64px; border: 1px solid #cecece;
+                    font: {
+                        size: 16px;
+                        weight: 500;
+                    }
+                }
+                .search-button {
+                    cursor: pointer; float: right;
+                    width: 98px; height: 64px; background: #366df2 url(../img/search-button1.png) center center no-repeat;
+                    background-size: contain; text-indent: -9999px;
+                }
+                &:after {
+                    @include clearBoth;
+                }
+            }
+            .product-table {
+                width: $width100;
+                table {
+                    width: 1200px; /* 2019-06-05 */
+                    border: 1px solid #999;
+                    caption {
+                        display: none;
+                    }
+                    border-collapse: collapse;
+                    tr {
+                        height: 64px;
+                        th {
+                            padding: 0 12px;
+                            border: 1px solid #999;
+                            background: #d4d4d4;
+                            color: $bgTextColor;
+                            font: {
+                                size: 18px; /* 2019-06-05 */
+                                weight: 400;
+                            }
+                        }
+                        td {
+                            border: 1px solid #999;
+                            text-align: center;
+                            background: #f4f4f4;
+                            color: $mainTextColor;
+                            font: {
+                                size: 16px; /* 2019-06-05 */
+                                weight: 300;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+

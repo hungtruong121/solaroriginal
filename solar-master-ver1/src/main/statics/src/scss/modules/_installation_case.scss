@@ -1,0 +1,160 @@
+.section {
+    &.process-content-wrap {
+        .section-content {
+            .bdrs-box {
+                margin: 0 auto 70px;
+                width: 400px; height: 60px; border-radius: 30px;
+                background: #839dd6; box-shadow: 2px 2px 5px rgba(0,0,0,.3); text-align: center; line-height: 60px;
+                color: #fff;
+                font: {
+                    size: 24px;
+                }
+            }
+            .process-inner {
+                @include padding ($pb:100px);
+                width: $width100;
+                &:after {
+                    @include clearBoth();
+                }
+                >div {
+                    @include position (relative);
+                    float: left;
+                    @include margin ($mr:16px,$mb:16px);
+                    width: 590px; height: 470px;
+                    &:nth-child(even) {
+                        @include margin ($mr:0px);
+                    }
+                    &.item1 {
+                        background: url('../img/case1-1.png');
+                    }
+                    &.item2 {
+                        background: url('../img/case1-2.png');
+                    }
+                    &.item3 {
+                        background: url('../img/case1-3.png');
+                    }
+                    &.item4 {
+                        background: url('../img/case1-4.png');
+                    }
+                    &.item5 {
+                        background: url('../img/case1-5.png');
+                    }
+                    &.item6 {
+                        background: url('../img/case1-6.png');
+                    }
+                    div {
+                        @include padding ($pr:20px);
+                        @include position (absolute,$b:0);
+                        width: $width100; height: 100px; background: rgba(23,32,53,.7);
+                        color: $whiteColor;
+                        @include flex (flex,center);
+                        align-items: center;
+                        p {
+                            width: 488px;
+                            line-height: 35px;
+                            font: {
+                                size: 25px;
+                            }
+                        }
+                        span {
+                            text-align: center; line-height: 45px;
+                            @include margin ($ml:20px,$mr:20px);
+                            width: 45px; height: 45px;
+                            background: #000c25;
+                            font: {
+                                size: 20px;
+                            }
+                        }
+                    }
+                }
+                &.last {
+                    @include border-bottom;
+                    >div {
+                        &.item1 {
+                            background: url('../img/case2-1.png');
+                        }
+                        &.item2 {
+                            background: url('../img/case2-2.png');
+                        }
+                        &.item3 {
+                            background: url('../img/case2-3.png');
+                        }
+                        &.item4 {
+                            background: url('../img/case2-4.png');
+                        }
+                        &.item5 {
+                            background: url('../img/case2-5.png');
+                        }
+                        &.item6 {
+                            background: url('../img/case2-6.png');
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.case-content-wrap {
+        @include padding ($pb:150px);
+        .section-content {
+            .case-inner {
+                >div {
+                    @include position (relative);
+                    display: inline-block;
+                    @include margin ($mr:16px,$mb:16px);
+                    width: 590px; height: 350px;
+                    &.item1 {
+                        background: url('../img/case-2-1.png');
+                        background-size: 100%;
+                    }
+                    &.item2 {
+                        background: url('../img/case-2-2.png');
+                        background-size: 100%;
+                        @include margin ($mr:0px);
+                    }
+                    &.item3 {
+                        background: url('../img/case-2-3.png');
+                        background-size: 100%;
+                    }
+                    &.item4 {
+                        background: url('../img/case-2-4.png');
+                        background-size: 100%;
+                        @include margin ($mr:0px);
+                    }
+                    &.item5 {
+                        background: url('../img/case-2-5.png');
+                        background-size: 100%;
+                    }
+                    &.item6 {
+                        background: url('../img/case-2-6.png');
+                        background-size: 100%;
+                        @include margin ($mr:0px);
+                    }
+                    div {
+                        @include position (absolute,$b:0);
+                        width: $width100; height: 100px; background: rgba(23,32,53,.7);
+                        color: $whiteColor;
+                        p {
+                            @include position (absolute,$l:48px,$b:36px);
+                            line-height: 35px;
+                            font: {
+                                size: 25px;
+                            }
+                        }
+                        b {
+                            @include position (absolute,$l:23px,$b:48px);
+                            display: block;
+                            text-align: center;
+                            line-height: 45px;
+                            width: 8px; height: 8px;
+                            text-indent: -9999px;
+                            background: $whiteColor;
+                            font: {
+                                size: 20px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

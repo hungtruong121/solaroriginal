@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="contactVO">
+
+    <typeAlias  alias="egovMap" type="egovframework.rte.psl.dataaccess.util.EgovMap"/>
+    <typeAlias  alias="contactVO" type = "egovframework.let.citizen.service.ContactVO"/>
+    
+<!--       <resultMap id="contactVO" class="egovframework.let.citizen.service.ContactVO">
+      
+        <result property="id" column="id" columnIndex="1"/>
+        <result property="name" column="name" columnIndex="2"/>
+        <result property="phone" column="phone" columnIndex="3"/>
+        <result property="title" column="title" columnIndex="4"/>
+        <result property="content" column="content" columnIndex="5"/>
+        <result property="createAt" column="createAt" columnIndex="6"/>        
+    </resultMap> -->
+    
+    <resultMap id="contactVos" class="egovframework.let.citizen.service.ContactVO">
+        <result property="id" column="id" columnIndex="1"/>
+        <result property="uid" column="uid" columnIndex="2"/>
+        <result property="name" column="name" columnIndex="3"/>
+        <result property="phone" column="phone" columnIndex="4"/>
+        <result property="title" column="title" columnIndex="5"/>
+        <result property="content" column="content" columnIndex="6"/>
+        <result property="createAt" column="createAt" columnIndex="7"/>
+        <result property="respondedAt" column="respondedAt" columnIndex="8"/>
+        <result property="resContent" column="resContent" columnIndex="9"/>
+    </resultMap>
+    
+    
+     <select id="Contact.findAll"   resultMap="contactVos">
+        <![CDATA[
+		SELECT      cuq.id                 as id,
+		            cuq.citizen_user_id    as uid,
+			        cuq.user_name          as name,
+                    cuq.user_phone         as phone ,
+                    cuq.title              as title ,
+                    cuq.contents           as content ,
+                    cuq.created_at         as createAt ,
+                    cuq.responded_at       as respondedAt, 
+                    cuq.res_content        as resContent
+                           
+		FROM 	     citizen_user_qna cuq
+		WHERE  cuq.deleted_at IS NULL
+		ORDER BY created_at DESC
+		 ]]>
+    </select>
+    
+    <select id="Contact.findById"   resultMap="contactVos">
+        <![CDATA[
+		SELECT      cuq.id                 as id,
+		            cuq.citizen_user_id    as uid,
+			        cuq.user_name          as name,
+                    cuq.user_phone         as phone ,
+                    cuq.title              as title ,
+                    cuq.contents           as content ,
+                    cuq.created_at         as createAt ,
+                    cuq.responded_at       as respondedAt, 
+                    cuq.res_content        as resContent
+                           
+		FROM 	     citizen_user_qna cuq
+		WHERE id = #id#
+		AND  cuq.deleted_at IS NULL
+		 ]]>
+    </select>
+
+    <select id="Contact.findByUserId"   resultMap="contactVos">
+        <![CDATA[
+		SELECT      cuq.id                 as id,
+		            cuq.citizen_user_id    as uid,
+			        cuq.user_name          as name,
+                    cuq.user_phone         as phone ,
+                    cuq.title              as title ,
+                    cuq.contents           as content ,
+                    cuq.created_at         as createAt ,
+                    cuq.responded_at       as respondedAt,
+                    cuq.res_content        as resContent
+
+		FROM 	     citizen_user_qna cuq
+		WHERE citizen_user_id = #userId#
+		AND  cuq.deleted_at IS NULL
+		ORDER BY created_at DESC
+		 ]]>
+    </select>
+    
+	<insert id="Contact.insert" parameterClass="contactVO">
+        <![CDATA[
+            INSERT INTO citizen_user_qna 
+                	(
+                	citizen_user_id,
+                	user_phone,
+                    user_name,
+                    title,
+                    contents,
+                    created_at
+            )
+            VALUES (
+                    #uid#,
+                    #phone#,
+                    #name#,
+                    #title#,
+                    #content#,
+                   	NOW()
+           )
+        ]]>
+        <selectKey resultClass="int" keyProperty="id">
+          	SELECT @@IDENTITY AS id
+      	</selectKey>
+    </insert>
+
+</sqlMap>

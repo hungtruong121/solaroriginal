@@ -1,0 +1,28 @@
+.section {
+    &.sub-content-wrap {
+        width: $width100; height: 1086px; background: url('../img/about_us_bg.png') no-repeat; background-position: bottom; background-size: 100%;
+        .section-content {
+            width: 1060px; margin: 0 auto;
+            div {
+                &.text {
+                width: 773px; height: 74px; background: url('../img/about_us_text.png') no-repeat;
+                margin: 88px auto 69px;
+                }
+            }
+            p {
+                color: $subTextColor;
+                font: {
+                    size: 18px;
+                }
+                margin: 0 auto;
+                width: 800px; height: 395px; line-height: 30px;
+                span {
+                @include margin($mb:46px);
+                text-align: center;
+                display: block; 
+                width: 55px; height: 3px; background: $blackColor;
+                }
+            }
+        }
+    }
+}
